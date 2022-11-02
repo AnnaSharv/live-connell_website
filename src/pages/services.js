@@ -1,6 +1,6 @@
 import React from "react";
-
 import Header from "../components/Header";
+import { Link } from 'react-router-dom'
 
 //images
 import img1 from '../assets/images/Saiyna-George-Charlotte-Lilya_WEB-RES_009 2.jpg'
