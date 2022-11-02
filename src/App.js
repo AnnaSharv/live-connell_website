@@ -19413,16 +19413,16 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="*" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/sectors" element={<Sectors />} />
-        <Route path="/clients" element={<Clients />} />
-        <Route path="/news/*" element={<News />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/transactions/*" element={<Transactions />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/careers/*" element={<Candidates />} />
-        <Route path="/team" element={<Team />} />
+        <Route path="/clare" element={<Home />} />
+        <Route path="services" element={<Services />} />
+        <Route path="sectors" element={<Sectors />} />
+        <Route path="clients" element={<Clients />} />
+        <Route path="news/*" element={<News />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="transactions/*" element={<Transactions />} />
+        <Route path="careers" element={<Careers />} />
+        <Route path="careers/*" element={<Candidates />} />
+        <Route path="team" element={<Team />} />
       </Routes>
       <Footer />
     </div>
