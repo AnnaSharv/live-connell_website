@@ -13,52 +13,52 @@ function Navigation() {
   
   useEffect(() => {
     switch (location.pathname) {
-      case "/services":
+      case "/clare/services":
         setRouteName("Services")
         break;
-      case "/sectors":
+      case "/clare/sectors":
         setRouteName("Sectors")
         break;
-      case "/clients":
+      case "/clare/clients":
         setRouteName("Clients")
         break;
-      case "/news":
+      case "/clare/news":
         setRouteName("News")
         break;
-      case "/contact":
+      case "/clare/contact":
         setRouteName("Contact")
         break;
-      case "/transactions/all":
+      case "/clare/transactions/all":
         setRouteName("Transactions")
         break;
-      case "/transactions/2022":
+      case "/clare/transactions/2022":
         setRouteName("Transactions")
         break;
-      case "/transactions/2021":
+      case "/clare/transactions/2021":
         setRouteName("Transactions")
         break;
-      case "/transactions/2019":
+      case "/clare/transactions/2019":
         setRouteName("Transactions")
         break;
-      case "/transactions/2018":
+      case "/clare/transactions/2018":
         setRouteName("Transactions")
         break;
-      case "/transactions/2017":
+      case "/clare/transactions/2017":
         setRouteName("Transactions")
         break;
-      case "/transactions/2016":
+      case "/clare/transactions/2016":
         setRouteName("Transactions")
         break;
-      case "/transactions/2014":
+      case "/clare/transactions/2014":
         setRouteName("Transactions")
         break;
-      case "/transactions/2013":
+      case "/clare/transactions/2013":
         setRouteName("Transactions")
         break;
-      case "/careers":
+      case "/clare/careers":
         setRouteName("Careers")
         break;
-      case "/team":
+      case "/clare/team":
         setRouteName("Team")
         break;
   
