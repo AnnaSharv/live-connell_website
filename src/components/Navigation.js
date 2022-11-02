@@ -76,7 +76,7 @@ function Navigation() {
     <div className='navigations'>
 
     <Navbar expand="lg">
-        <Navbar.Brand href="/"><img src={Logo} width="100" alt="Connell_consulting"/></Navbar.Brand>
+        <Navbar.Brand href="/clare"><img src={Logo} width="100" alt="Connell_consulting"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className='nav nav-top'>
           <Nav className="nav-left">
@@ -94,7 +94,7 @@ function Navigation() {
     </Navbar>
 
     <Navbar expand="lg">
-        <Navbar.Brand href="/" id="consulting">Consulting <span className='d-none title-in-mobileview'>{routeName}</span></Navbar.Brand>
+        <Navbar.Brand href="/clare" id="consulting">Consulting <span className='d-none title-in-mobileview'>{routeName}</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className='nav nav-bottom'>
           <Nav className="nav-left"></Nav>
