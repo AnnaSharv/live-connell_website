@@ -19413,7 +19413,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="/clare" element={<Home />} />
+        <Route path="*" element={<Home />} />
         <Route path="services" element={<Services />} />
         <Route path="sectors" element={<Sectors />} />
         <Route path="clients" element={<Clients />} />
