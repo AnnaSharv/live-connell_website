@@ -58,6 +58,9 @@ function Navigation() {
       case "/clare/careers":
         setRouteName("Careers")
         break;
+      case "/clare/careers/*":
+        setRouteName("Careers")
+        break;
       case "/clare/team":
         setRouteName("Team")
         break;

@@ -37,7 +37,7 @@ function Candidates() {
         </Col>
       </Row>
 
-      <Row style={{ marginBottom: "140px" }}>
+      <Row style={{ marginBottom: "140px" }} className="candidates_wrapper">
         <Col className="role-and-package service" md={6} xs={12}>
           <div className="candidates-header">The role</div>
           {pathname.includes("graduates") ? (

@@ -1,6 +1,6 @@
 import "./App.css";
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, {useEffect, useLayoutEffect} from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 //components
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -18,7 +18,7 @@ import Team from "./pages/team";
 import Candidates from "./pages/candidates";
 
 function App() {
-  React.useEffect(() => {
+  useEffect(() => {
     var har=[{
       "log": {
         "version": "1.2",
@@ -19410,22 +19410,33 @@ function App() {
     //  console.log(imageUrls.join('\n'));
    
   }, [])
+
+
+  const Wrapper = ({children}) => {
+    const location = useLocation();
+    useLayoutEffect(() => {
+      document.documentElement.scrollTo(0, 0);
+    }, [location.pathname]);
+    return children
+  } 
   return (
     <div className="App">
-      <Navigation />
-      <Routes>
-        <Route path="/clare/" element={<Home />} />
-        <Route path="/clare/services" element={<Services />} />
-        <Route path="/clare/sectors" element={<Sectors />} />
-        <Route path="/clare/clients" element={<Clients />} />
-        <Route path="/clare/news/*" element={<News />} />
-        <Route path="/clare/contact" element={<Contact />} />
-        <Route path="/clare/transactions/*" element={<Transactions />} />
-        <Route path="/clare/careers" element={<Careers />} />
-        <Route path="/clare/careers/*" element={<Candidates />} />
-        <Route path="/clare/team" element={<Team />} />
-      </Routes>
-      <Footer />
+      <Wrapper>
+        <Navigation />
+        <Routes>
+          <Route path="/clare/" element={<Home />} />
+          <Route path="/clare/services" element={<Services />} />
+          <Route path="/clare/sectors" element={<Sectors />} />
+          <Route path="/clare/clients" element={<Clients />} />
+          <Route path="/clare/news/*" element={<News />} />
+          <Route path="/clare/contact" element={<Contact />} />
+          <Route path="/clare/transactions/*" element={<Transactions />} />
+          <Route path="/clare/careers" element={<Careers />} />
+          <Route path="/clare/careers/*" element={<Candidates />} />
+          <Route path="/clare/team" element={<Team />} />
+        </Routes>
+        <Footer />
+      </Wrapper>
     </div>
   );
 }
