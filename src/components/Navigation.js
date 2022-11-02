@@ -80,9 +80,9 @@ function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className='nav nav-top'>
           <Nav className="nav-left">
-              <Link to="transactions/all"><li> Recent transactions </li></Link>  
-              <Link to="careers"><li> Careers </li></Link>  
-              <Link to="team"><li> Team </li></Link>  
+              <Link to="/clare/transactions/all"><li> Recent transactions </li></Link>  
+              <Link to="/clare/careers"><li> Careers </li></Link>  
+              <Link to="/clare/team"><li> Team </li></Link>  
           </Nav>
           <Nav className="nav-right">
                 <li style={{"gridArea": "area-1"}}> info@connell-consulting.com </li>

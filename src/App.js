@@ -19408,7 +19408,7 @@ function App() {
     //   imageUrls.push(entry.request.url);
     // });
     //  console.log(imageUrls.join('\n'));
-    console.log("ani1")
+   
   }, [])
   return (
     <div className="App">
