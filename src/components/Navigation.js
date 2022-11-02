@@ -99,12 +99,12 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav" className='nav nav-bottom'>
           <Nav className="nav-left"></Nav>
           <Nav className="nav-right">
-            <Link to="/"> <li> Home </li> </Link>
-            <Link to="services"> <li> Services </li> </Link>
-            <Link to="sectors"> <li> Sectors </li> </Link>
-            <Link to="clients"> <li> Our clients </li> </Link>
-            <Link to="news"> <li> News </li> </Link>
-            <Link to="contact"> <li className='contact-button'> Contact </li> </Link>
+            <Link to="/clare/"> <li> Home </li> </Link>
+            <Link to="/clare/services"> <li> Services </li> </Link>
+            <Link to="/clare/sectors"> <li> Sectors </li> </Link>
+            <Link to="/clare/clients"> <li> Our clients </li> </Link>
+            <Link to="/clare/news"> <li> News </li> </Link>
+            <Link to="/clare/contact"> <li className='contact-button'> Contact </li> </Link>
           </Nav>
         </Navbar.Collapse>
     </Navbar>
