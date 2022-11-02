@@ -9,8 +9,9 @@ import Map from "../assets/images/Map.png";
 import Header from "../components/Header.js";
 
 import ContactUs from "../components/ContactUs";
+
+
 function Contact() {
-  const navigate = useNavigate();
   return (
     <div>
       <Header
@@ -19,6 +20,8 @@ function Contact() {
         padding="0px"
         myClass="noclass"
       />
+
+
 
       <div className="contact-info mb-0">
         <div className="ps-0">
@@ -32,14 +35,14 @@ function Contact() {
         <div>
           <p className="title">Location:</p>
           <p className="description">
-            9 Catherine Place WestminsterLondon <p className="m-0">SW1E 6DX</p>
+            9 Catherine Place WestminsterLondon <span className="d-block m-0">SW1E 6DX</span>
           </p>
         </div>
         <div>
           <p className="title">Directions:</p>
           <p className="description">
             Take the Cardinal Place exit from{" "}
-            <p className="m-0">Victoria Station</p>
+            <span className="d-block m-0">Victoria Station</span>
           </p>
         </div>
       </div>
@@ -47,12 +50,11 @@ function Contact() {
       {/* AIzaSyAqpbEOjSF7oDGaVvio9t5dDMEhM2cQqX8 */}
 
       <Row className="contact-form">
-        <Col>
+        <Col className="p-0">
           <p className="form-title">Fill form</p>
-
           <ContactUs />
         </Col>
-        <Col className="form-image">
+        <Col className="form-image p-0">
           <img src={Img} alt="img" />
         </Col>
       </Row>

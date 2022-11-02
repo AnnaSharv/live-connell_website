@@ -6,7 +6,6 @@ import Logo from '../assets/images/Connell-logo.svg'
 import Twitter from '../assets/images/akar-icons_twitter-fill.svg'
 import Linkedin from '../assets/images/akar-icons_linkedin-fill.svg'
 
-
 import { Link, useLocation } from "react-router-dom";
 function Navigation() {
   const location = useLocation()
@@ -29,7 +28,31 @@ function Navigation() {
       case "/contact":
         setRouteName("Contact")
         break;
-      case "/transactions":
+      case "/transactions/all":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2022":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2021":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2019":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2018":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2017":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2016":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2014":
+        setRouteName("Transactions")
+        break;
+      case "/transactions/2013":
         setRouteName("Transactions")
         break;
       case "/careers":
@@ -71,7 +94,7 @@ function Navigation() {
     </Navbar>
 
     <Navbar expand="lg">
-        <Navbar.Brand href="#home" id="consulting">Consulting <span className='d-none title-in-mobileview'>{routeName}</span></Navbar.Brand>
+        <Navbar.Brand href="/" id="consulting">Consulting <span className='d-none title-in-mobileview'>{routeName}</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className='nav nav-bottom'>
           <Nav className="nav-left"></Nav>

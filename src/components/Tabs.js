@@ -44,13 +44,10 @@ function TabsCustom() {
             <div title={tr.header} key={tr.id}>
               <div className="transactions-image-container">
                 {tr.images?.map((image, i) => {
-                  return (<LazyLoadImage
-                      key={i}
-                      effect="blur"
-                      src={image}
-                      alt={image}
-                      width="100"
-                    />
+                  return (
+
+
+                    <img src={image} loading="lazy"/>
                   );
                 })}
               </div>

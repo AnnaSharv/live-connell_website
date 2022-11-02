@@ -1,3 +1,4 @@
+import CountUp from 'react-countup'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -33,13 +34,15 @@ function Header({
           {statistics && (
             <div className="statistics">
               <div>
-                <span className="numbers">423</span>
+                {/* <span className="numbers">423</span> */}
+                <CountUp className="numbers" end={423} suffix="%" duration={2} style={{"minWidth":"115px"}}/>
                 <span>
                   Over <br /> engagements
                 </span>
               </div>
               <div>
-                <span className="numbers"> 67%</span>
+                {/* <span className="numbers"> 67%</span> */}
+                <CountUp className="numbers" end={67} suffix="%" duration={2} style={{"minWidth":"96px"}}/>
                 <span>
                   Repeat <br /> business
                 </span>

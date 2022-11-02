@@ -19417,7 +19417,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/sectors" element={<Sectors />} />
         <Route path="/clients" element={<Clients />} />
-        <Route path="/news" element={<News />} />
+        <Route path="/news/*" element={<News />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/transactions/*" element={<Transactions />} />
         <Route path="/careers" element={<Careers />} />
