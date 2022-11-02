@@ -29,7 +29,7 @@ function Services() {
             refinancing and divestment of assets:
           </p>
           <p>SEE ALL THE RECENT TRANSACTIONS</p>
-          <button>Transactions</button>
+          <Link to="/clare/transactions/all"><button>Transactions</button></Link>
         </div>
 
         <div className="section-right">
