@@ -1000,14 +1000,14 @@ padding-bottom: 30px;
       "area-3 area-4";
   }
   /* lines */
-  .contact-info::before,
+  
   .navbar::before,
   .transaction-card:nth-child(2)::before,
   .transaction-card:nth-child(3)::before
-{
+  {
     left: -18px;
   }
-  .news-header::before  {
+  .news-header::before, .contact-info::before, .contact-info::after  {
     left:0
   }
 

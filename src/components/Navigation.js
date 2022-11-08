@@ -81,7 +81,10 @@ function Navigation() {
       case "/clare/careers":
         setRouteName("Careers")
         break;
-      case "/clare/careers/*":
+      case "/clare/careers/graduates":
+        setRouteName("Careers")
+        break;
+      case "/clare/careers/experienced-hires":
         setRouteName("Careers")
         break;
       case "/clare/team":
@@ -115,10 +118,10 @@ function Navigation() {
                 <li style={{"gridArea": "area-2"}}> +44 (0)20 7371 8142 </li>
                 <li style={{"gridArea": "area-3"}}> <img src={Twitter}  alt="logo_connell_twitter"/> </li>
                 <li style={{"gridArea": "area-4"}}> <img src={Linkedin}  alt="linkedin"/> </li>
-                <Link to="/clare/login" onClick={() => {
+                {/* <Link to="/clare/login" onClick={() => {
                   userStatus === true && setUserStatus(null)
                  // localStorage.setItem("userStatus", false)
-                }}><li> {userStatus == true ? "გამოსვლა" : "შესვლა"} </li></Link>  
+                }}><li> {userStatus == true ? "გამოსვლა" : "შესვლა"} </li></Link>   */}
           </Nav>
         </Navbar.Collapse>
     </Navbar>
