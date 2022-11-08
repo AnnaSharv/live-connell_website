@@ -30,10 +30,28 @@ function Navigation() {
       case "/clare/news":
         setRouteName("News")
         break;
+      case "/clare/news/all":
+        setRouteName("News")
+        break;
+      case "/clare/news/awards":
+        setRouteName("News")
+        break;
+      case "/clare/news/articles":
+        setRouteName("News")
+        break;
+      case "/clare/news/deals":
+        setRouteName("News")
+        break;
       case "/clare/contact":
         setRouteName("Contact")
         break;
       case "/clare/transactions/all":
+        setRouteName("Transactions")
+        break;
+      case "/clare/transactions/2024":
+        setRouteName("Transactions")
+        break;
+      case "/clare/transactions/2023":
         setRouteName("Transactions")
         break;
       case "/clare/transactions/2022":

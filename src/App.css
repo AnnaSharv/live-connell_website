@@ -147,6 +147,7 @@ ul,
 }
 .nav-bottom .nav-right {
   color: var(--blackmedium);
+  grid-row-gap: 9px;
 }
 .contact-button {
   width: 140px;
@@ -984,7 +985,7 @@ padding-bottom: 30px;
   }
   .nav-top .nav-left {
     margin-top: 18px;
-    grid-row: 9px;
+    grid-row-gap: 9px;
   }
   .nav-top .nav-right {
     display: grid !important;
