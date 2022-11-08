@@ -1,6 +1,7 @@
 import "./App.css";
-import React, {useEffect, useLayoutEffect} from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import React, {useEffect, useState, useLayoutEffect, useContext} from "react";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import Authcontext from "./pages/context/Authcontext";
 //components
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -16,8 +17,16 @@ import Transactions from "./pages/transactions";
 import Careers from "./pages/careers";
 import Team from "./pages/team";
 import Candidates from "./pages/candidates";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
+
+
+
 
 function App() {
+  const [userStatus, setUserStatus] = useState(null)
+ let storageUser = false
+ 
   useEffect(() => {
     var har=[{
       "log": {
@@ -19399,8 +19408,7 @@ function App() {
           }
         ]
       }
-    }]
-      
+    }]   
     // var imageUrls = [];
     // har[0].log.entries.forEach(function (entry) {
     //   // This step will filter out all URLs except images. If you just want e.g. just jpg's then check mimeType against "image/jpeg", etc.
@@ -19408,9 +19416,9 @@ function App() {
     //   imageUrls.push(entry.request.url);
     // });
     //  console.log(imageUrls.join('\n'));
-   
+ 
+   //localStorage.getItem("userStatus") !== null && setUserStatus(true)
   }, [])
-
 
   const Wrapper = ({children}) => {
     const location = useLocation();
@@ -19419,25 +19427,45 @@ function App() {
     }, [location.pathname]);
     return children
   } 
+  const RequiresAuth = ({children}) => {
+   // localStorage.getItem("userStatus") !== null && setUserStatus(true)
+
+    return userStatus == true ? (children) : <Navigate to="/clare/login" />
+  }
+   
+
+  
   return (
-    <div className="App">
-      <Wrapper>
-        <Navigation />
-        <Routes>
-          <Route path="/clare/" element={<Home />} />
-          <Route path="/clare/services" element={<Services />} />
-          <Route path="/clare/sectors" element={<Sectors />} />
-          <Route path="/clare/clients" element={<Clients />} />
-          <Route path="/clare/news/*" element={<News />} />
-          <Route path="/clare/contact" element={<Contact />} />
-          <Route path="/clare/transactions/*" element={<Transactions />} />
-          <Route path="/clare/careers" element={<Careers />} />
-          <Route path="/clare/careers/*" element={<Candidates />} />
-          <Route path="/clare/team" element={<Team />} />
-        </Routes>
-        <Footer />
-      </Wrapper>
-    </div>
+    <>
+      <Authcontext.Provider value={{userStatus, setUserStatus}}>
+        <div className="App">
+          <Wrapper>
+            <Navigation />
+            <Routes>
+              <Route path="/clare/" element={<Home />} />
+              <Route path="/clare/login" element={<Login />} />
+              <Route path="/clare/dashboard" element={
+                <RequiresAuth>
+                  <Dashboard />
+                </RequiresAuth>
+              } />
+              <Route path="/clare/services" element={<Services />} />
+              <Route path="/clare/sectors" element={<Sectors />} />
+              <Route path="/clare/clients" element={<Clients />} />
+              <Route path="/clare/news/*" element={<News />} />
+              <Route path="/clare/contact" element={<Contact />} />
+              <Route path="/clare/transactions/*" element={<Transactions />} />
+              <Route path="/clare/careers" element={<Careers />} />
+              <Route path="/clare/careers/*" element={<Candidates />} />
+              <Route path="/clare/team" element={<Team />} />
+            </Routes>
+            <Footer />
+          </Wrapper>
+        </div>
+      </Authcontext.Provider>
+    </>
+   
+   
   );
 }
 

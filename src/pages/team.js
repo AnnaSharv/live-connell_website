@@ -9,6 +9,13 @@ import { team } from "../data/team.js";
 // hederi shecvale border daamate
 import Image from "../../src/assets/images/Full-Team-A-Hi-Res-scaled.jpg";
 function Team() {
+//   React.useEffect(() => {
+//     const size = new TextEncoder().encode(JSON.stringify(team)).length
+// const kiloBytes = size / 1024;
+// const megaBytes = kiloBytes / 1024;
+
+// console.log("size for team json. 100 posts", "kiloBytes", kiloBytes, "megaBytes", megaBytes)
+//   }, [])
   return (
     <div>
       <Header

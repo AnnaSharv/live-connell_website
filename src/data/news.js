@@ -26,6 +26,6 @@ export const news = [
         date: "",
         header: "Connell Consulting produced vendor commercial due diligence on the sale",
         body: ""
-    }
+    },
 ]
 

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import Authcontext from '../pages/context/Authcontext';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
 
@@ -7,9 +8,13 @@ import Twitter from '../assets/images/akar-icons_twitter-fill.svg'
 import Linkedin from '../assets/images/akar-icons_linkedin-fill.svg'
 
 import { Link, useLocation } from "react-router-dom";
+
+
+
 function Navigation() {
   const location = useLocation()
   const [routeName, setRouteName] = useState("Home")
+  const {userStatus, setUserStatus} = useContext(Authcontext)
   
   useEffect(() => {
     switch (location.pathname) {
@@ -92,6 +97,10 @@ function Navigation() {
                 <li style={{"gridArea": "area-2"}}> +44 (0)20 7371 8142 </li>
                 <li style={{"gridArea": "area-3"}}> <img src={Twitter}  alt="logo_connell_twitter"/> </li>
                 <li style={{"gridArea": "area-4"}}> <img src={Linkedin}  alt="linkedin"/> </li>
+                <Link to="/clare/login" onClick={() => {
+                  userStatus === true && setUserStatus(null)
+                 // localStorage.setItem("userStatus", false)
+                }}><li> {userStatus == true ? "გამოსვლა" : "შესვლა"} </li></Link>  
           </Nav>
         </Navbar.Collapse>
     </Navbar>
