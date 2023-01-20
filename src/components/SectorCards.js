@@ -1,30 +1,32 @@
 import React from "react";
-
-import { sectors } from "../data/sectors.js";
+import {Row, Col} from 'antd'
+import {Link} from 'react-router-dom'
 
 function SectorCards() {
   return (
-    <div className="sectors-container">
-      {sectors &&
-        sectors.map((sector) => {
-          return (
-            <div className="sector-card" key={sector.id}>
-              <div>
-                <h2>{sector.title}</h2>
-                <p>{sector.body}</p>
-              </div>
-              <div>
-                <h3>{sector.subtitle}</h3>
-                <ul>
-                  {sector.list.map((listItem, i) => {
-                    return <li key={i}>{listItem}</li>;
-                  })}
-                </ul>
-              </div>
-            </div>
-          );
-        })}
-    </div>
+    <Row className="sectors-container" gutter={[20,20]}>
+      <Col className="sector-card" sm={24} md={8}>
+        <span> <img src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Patrick-Alex-Cheran_WEB-RES_012.jpg" width="100%" alt="" /></span>
+        <Link to="social-care"><p>Social Care</p></Link> 
+      </Col>
+      <Col className="sector-card" sm={24} md={8}>
+        <span> <img src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Patrick-Alex-Cheran_WEB-RES_012.jpg" width="100%" alt="" /></span>
+        <Link to="pharma-and-life-sciences"><p>Pharma & <br /> Life Sciences</p></Link>
+      </Col>
+      <Col className="sector-card" sm={24} md={8}>
+        <span> <img src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Patrick-Alex-Cheran_WEB-RES_012.jpg" width="100%" alt="" /></span>
+        <Link to="healthcare"><p>Healthcare</p></Link>
+      </Col>
+
+      <Col className="sector-card" sm={24} md={12}>
+        <span> <img src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Patrick-Alex-Cheran_WEB-RES_012.jpg" width="100%" alt="" /></span>
+        <Link to="children-care-and-education"><p>Children’s Care & Education</p></Link>
+      </Col>
+      <Col className="sector-card" sm={24} md={12}>
+        <span> <img src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Patrick-Alex-Cheran_WEB-RES_012.jpg" width="100%" alt="" /></span>
+       <Link to="student-accommodation"> <p>Student <br /> Accommodation</p></Link>
+      </Col>
+    </Row>
   );
 }
 

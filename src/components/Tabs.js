@@ -3,7 +3,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
+import {Row, Col} from 'antd'
 import { transactionsAll } from "../data/tabsTransactions";
 
 function TabsCustom() {
@@ -12,7 +12,6 @@ function TabsCustom() {
   const [routeName, setRouteName] = useState("all");
   useEffect(() => {
     setRouteName(Object.values(param)[0]);
-   
   }, [param]);
 
   return (
@@ -24,10 +23,11 @@ function TabsCustom() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="nav nav-bottom">
           <Nav className="nav-left">
+            
             {transactionsAll?.map((transaction, i) => {
               return (
                 <Link to={transaction.header} key={i}>
-                  <li> {transaction.header} </li>
+                  <li className={transaction.header.includes(routeName) ? 'active-link' : null}> {transaction.header}  </li>
                 </Link>
               );
             })}
@@ -42,15 +42,15 @@ function TabsCustom() {
         ) {
           return (
             <div title={tr.header} key={tr.id}>
-              <div className="transactions-image-container">
+              <Row className="transactions-image-container" gutter={20}>
                 {tr.images?.map((image, i) => {
                   return (
-
-
-                    <img src={image} loading="lazy"/>
+                    <Col sm={12} md={6}>
+                      <img src={image} loading="lazy" width="100%"/>
+                    </Col>
                   );
                 })}
-              </div>
+              </Row>
             </div>
           );
         }

@@ -14,7 +14,7 @@ function Transactions() {
         title={"Connell Consulting has worked on a large volume of transactions in the health, social care and special education space."}
         img={Image}
         order={"imageText"}
-        myClass={"recent-transactions"}
+        myClass={"recent-transactions banner-title-long"}
       />
       <div className="tabsContent">
         <h2>Choose year</h2>

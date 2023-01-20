@@ -2,25 +2,19 @@ import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
-function Banner({ title, bg, imgArr, icons, customClass }) {
-  const handleDragStart = (e) => e.preventDefault();
-  const items = [];
+function Banner({ bg, customClass }) {
+  const items = [
+  "Investor CDD on the CareTech property portfolio acquired by Civitas Investment Management", 
+  "Vendor CDD for the sale of Ludlow Street Healthcare to Ancala Partners", 
+  "Vendor CDD for the sale of LV Care Group to Aedifica and Emera", 
+  "Vendor CDD for the sale of RNID’s Care and Support Services to Achieve Together", 
+  "Vendor CDD for the sale of Voyage Care Group to Wren House Infrastructure", 
+  "Vendor CDD for the sale of RNID’s Care and Support Services to Achieve Together"
+  ];
 
-  {imgArr?.map((img,i) => {
- 
-    return items.push(<img src={img} onDragStart={handleDragStart} role="presentation" key={i} />)
-  })}
+
   return (
     <div className={`${customClass} banner d-flex`} style={{ backgroundColor: bg }}>
-      
-        {title && (
-          <div className="banner-text">
-            <p>{title[0]}</p>
-            <p>{title[1]}</p>
-          </div>
-        )}
-      
-
       <AliceCarousel
         mouseTracking
         autoPlay={true}

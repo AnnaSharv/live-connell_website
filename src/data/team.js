@@ -147,13 +147,13 @@ export const team = [
         mail:"",
         description:"Ben is Connell Consulting’s Research Coordinator. He is responsible for oversight of our primary research processes and data management related to health and social care stakeholder interviews, mystery shopping, and Freedom of Information requests. He graduated with a BA in Acting & Performance from the University for the Creative Arts."
     },
-    {
-        id:"19",
-        image:{Alfie},
-        name:"Alfie Barrishi",
-        mail:"",
-        description:"Alfie joined Connell Consulting as a Business Analyst after graduating from the University of Cambridge with a BA in English. He has previously worked as a private tutor for children with Special Educational Needs."
-    },
+    // {
+    //     id:"19",
+    //     image:{Alfie},
+    //     name:"Alfie Barrishi",
+    //     mail:"",
+    //     description:"Alfie joined Connell Consulting as a Business Analyst after graduating from the University of Cambridge with a BA in English. He has previously worked as a private tutor for children with Special Educational Needs."
+    // },
     {
         id:"20",
         image:{Ruby},

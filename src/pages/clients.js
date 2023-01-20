@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import {Row, Col} from 'antd'
 import Header from "../components/Header";
 
 import Img from '../assets/images/Clare-and-Charlotte-Sept-2020.jpg'
@@ -29,7 +30,7 @@ function Clients() {
       title="We have recently completed projects including refinancing, market strategy and commercial due diligence for the following clients:"
       img={Img}
       order="imageText"
-      myClass="smaller-padding-header"
+      myClass="smaller-padding-header banner-title-long"
       />
 
       <div className="clients_image_array">

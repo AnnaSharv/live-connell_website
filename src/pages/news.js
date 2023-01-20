@@ -7,8 +7,8 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import Img1 from "../assets/images/Saiyna-George-Charlotte-Lilya_WEB-RES_009 2-2.jpg";
-import Img2 from "../assets/images/Saiyna-George-Charlotte-Lilya_WEB-RES_009 2-1.jpg";
+// import Img1 from "../assets/images/Saiyna-George-Charlotte-Lilya_WEB-RES_009 2-2.jpg";
+// import "Img2" from "../assets/images/Saiyna-George-Charlotte-Lilya_WEB-RES_009 2-1.jpg";
 
 function news() {
   return (
@@ -34,7 +34,7 @@ function news() {
       <Row className="newsfeed justify-content-between">
         <Col className="col news-card">
           <Card className="border-0" style={{ width: "270px" }}>
-            <Card.Img variant="top" src={Img1} />
+            <Card.Img variant="top" src={"Img1"} />
             <Card.Body className="px-0">
               <Card.Title>
                 Connell Consulting produced vendor commercial due diligence to
@@ -49,7 +49,7 @@ function news() {
         </Col>
         <Col className="col news-card">
           <Card className="border-0" style={{ width: "270px" }}>
-            <Card.Img variant="top" src={Img2} />
+            <Card.Img variant="top" src={"Img2"} />
             <Card.Body className="px-0">
               <Card.Title>
                 Connell Consulting produced vendor commercial due diligence to
@@ -64,7 +64,7 @@ function news() {
         </Col>
         <Col className="col news-card">
           <Card className="border-0" style={{ width: "270px" }}>
-            <Card.Img variant="top" src={Img2} />
+            <Card.Img variant="top" src={"Img2"} />
             <Card.Body className="px-0">
               <Card.Title>
                 Connell Consulting produced vendor commercial due diligence to
@@ -79,7 +79,7 @@ function news() {
         </Col>
         <Col className="col news-card">
         <Card className="border-0" style={{ width: "270px" }}>
-          <Card.Img variant="top" src={Img2} />
+          <Card.Img variant="top" src={"Img2"} />
           <Card.Body className="px-0">
             <Card.Title>
               Connell Consulting produced vendor commercial due diligence to
@@ -94,7 +94,7 @@ function news() {
         </Col>
         <Col className="col news-card">
           <Card className="border-0" style={{ width: "270px" }}>
-            <Card.Img variant="top" src={Img2} />
+            <Card.Img variant="top" src={"Img2"} />
             <Card.Body className="px-0">
               <Card.Title>
                 Connell Consulting produced vendor commercial due diligence to

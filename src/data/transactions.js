@@ -16,5 +16,11 @@ export const transactions = [
         date: "Feb, 2022",
         header: "Connell Consulting enter the Pharma, Biotech, Vets and European Healthcare markets. ",
         body: "Connell Consulting to offer Pharma and Veterinary consulting services. Gonçalo Silva appointed Chief Executive of Pharma and European Healthcare. Chairman Paul Birley driving Connell Consulting’s transition into a larger firm. Dr Rose Cuthbertson to run deals in the"
+    },
+    {
+        id:"4",
+        date: "May, 2019",
+        header: "Connell Consulting enter the Pharma, Biotech, Vets and European Healthcare markets. ",
+        body: "Connell Consulting to offer Pharma and Veterinary consulting services. Gonçalo Silva appointed Chief Executive of Pharma and European Healthcare. Chairman Paul Birley driving Connell Consulting’s transition into a larger firm. Dr Rose Cuthbertson to run deals in the"
     }
 ]

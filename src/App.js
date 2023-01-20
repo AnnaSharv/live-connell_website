@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Services from "./pages/services";
 import Sectors from "./pages/sectors";
+import SectorsInside from "./pages/sectorsInside";
 import Clients from "./pages/clients";
 import News from "./pages/news";
 import Contact from "./pages/contact";
@@ -25,7 +26,6 @@ import Dashboard from "./pages/dashboard";
 
 function App() {
   const [userStatus, setUserStatus] = useState(null)
- let storageUser = false
  
   useEffect(() => {
     var har=[{
@@ -19427,12 +19427,18 @@ function App() {
     }, [location.pathname]);
     return children
   } 
-  const RequiresAuth = ({children}) => {
-   // localStorage.getItem("userStatus") !== null && setUserStatus(true)
 
-    return userStatus == true ? (children) : <Navigate to="/clare/login" />
+
+
+  
+
+  const RequiresAuth = ({children}) => {
+   let user_status_temp = localStorage.getItem("userStatus") == "true"
+   return user_status_temp ? (children) : <Navigate to="/clare/login" />
   }
    
+ 
+ 
 
   
   return (
@@ -19451,6 +19457,7 @@ function App() {
               } />
               <Route path="/clare/services" element={<Services />} />
               <Route path="/clare/sectors" element={<Sectors />} />
+              <Route path="/clare/sectors/*" element={<SectorsInside />} />
               <Route path="/clare/clients" element={<Clients />} />
               <Route path="/clare/news/*" element={<News />} />
               <Route path="/clare/contact" element={<Contact />} />

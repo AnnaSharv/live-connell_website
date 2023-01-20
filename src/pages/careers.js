@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Accordion from "react-bootstrap/Accordion";
 
-import Img from "../assets/images/Team-Filipa-focus-scaled.jpg";
+// import Img from "../assets/images/Team-Filipa-focus-scaled.jpg";
 
 import Header from "../components/Header.js";
 import Graduates from "./candidates";
@@ -13,14 +13,14 @@ import Graduates from "./candidates";
 function careers() {
   return (
     <div className="careers">
-      <Header
+    <Header
         subheading="Careers"
         title="A rewarding career"
         paragraphs={[
           "Connell Consulting has a highly skilled team of Analysts and Consultants with a wealth of experience across the health, social care and education sectors. As a market leading company that offers our clients detailed sector knowledge combined with commercial insight, we work with leading investors, banks, and operators on new and exciting opportunities.",
           "We are interested in receiving applications from smart and driven candidates who are seeking to support the delivery of commercial due diligence and strategic reports for clients across the health, social care and education sectors.",
         ]}
-        img={Img}
+        // img={Img}
         order="imageText"
       />
 
