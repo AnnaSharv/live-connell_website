@@ -32,11 +32,11 @@ function Clients() {
       myClass="smaller-padding-header banner-title-long"
       />
 
-      <div className="clients_image_array  container-custom">
+      <Row className="clients_image_array  container-custom" gutter={[30,25]}>
         {imagesArray ? (
           Object.values(imagesArray).map((image, i) => {
             return (
-              <div className="clients_image_card" key={i}>
+              <Col xs={8} sm={6} md={4} className="clients_image_card" key={i}>
                 <LazyLoadImage
                   effect="blur"
                   src={image}
@@ -44,13 +44,13 @@ function Clients() {
                   width="100"
                   className="clients_image"
                 />
-              </div>
+              </Col>
             );
           })
         ) : (
           <h1>loading</h1>
         )}
-      </div>
+      </Row>
     </div>
   );
 }

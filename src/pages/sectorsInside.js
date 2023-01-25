@@ -25,8 +25,8 @@ function SectorsInside({piePercent}) {
 
         <Row className='mblock-80 container-custom'>
             <Col sm={24} md={12}>
-                <Row gutter={20}>
-                    <Col sm={24} md={8}>
+                <Row gutter={[20,30]}>
+                    <Col sm={24} md={8} className="statisctics">
                         <div className='pie'></div>
                     </Col>
                     <Col sm={24} md={12}>

@@ -179,9 +179,9 @@ function ContactUs() {
             <button
               type="submit"
               className="button-solid"
-              style={{ width: "100%" }}
+              style={{ width: "100%", height:"50px" }}
             >
-              Submit
+              Submit email
             </button>
           </Col>
         </Row>

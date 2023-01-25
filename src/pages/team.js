@@ -27,23 +27,21 @@ function Team() {
       <Row className="team_image_container gx-5  container-custom" gutter={[20, 60]}>
         {team?.map((teamMember) => {
           return (
-           
-              <Col key={teamMember.id} className="member_card" sm={12} md={6}>
-                <div className="member_img">
-                  <img
-                  className="team_member_img"
-                    src={Object.values(teamMember.image)[0]}
-                    alt="connell_staff"
-                    width="100"
-                  />
-                </div>
-                <div className="member_text">
-                  <h1 className="member_text-header">{teamMember.name}</h1>
-                  <h6 className="member_text-subheader">CEO and Founder</h6>
-                  <Modal memberImg={Object.values(teamMember.image)[0]} memberName={teamMember.name} memberDescription={teamMember.description} memberMail={teamMember.mail} memberPosition="CEO & Founder"/>
-                </div>
-              </Col>
-            
+            <Col key={teamMember.id} className="member_card" xs={12} sm={12} md={6}>
+              <div className="member_img">
+                <img
+                className="team_member_img"
+                  src={Object.values(teamMember.image)[0]}
+                  alt="connell_staff"
+                  width="100"
+                />
+              </div>
+              <div className="member_text">
+                <h1 className="member_text-header">{teamMember.name}</h1>
+                <h6 className="member_text-subheader">CEO and Founder</h6>
+                <Modal memberImg={Object.values(teamMember.image)[0]} memberName={teamMember.name} memberDescription={teamMember.description} memberMail={teamMember.mail} memberPosition="CEO & Founder"/>
+              </div>
+            </Col>
           );
         })}
       </Row>

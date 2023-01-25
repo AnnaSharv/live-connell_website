@@ -15,93 +15,49 @@ import { Link, Navigate, useNavigate, useLocation } from "react-router-dom";
 
 function Navigation() {
   const auth = getAuth();
-  let navigate = useNavigate();
-  let user_status_localStorage = localStorage.getItem("userStatus") == "true"
+  // let navigate = useNavigate();
+  // let user_status_localStorage = localStorage.getItem("userStatus") == "true"
   const location = useLocation()
   const [routeName, setRouteName] = useState("Home")
   const [activeRouteName, setActiveRouteName] = useState(routeName)
   const {userStatus, setUserStatus} = useContext(Authcontext)
   
   useEffect(() => {
-    switch (location.pathname) {
-      case "/clare/services":
+    switch (true) {
+      
+      case location.pathname.includes("services"):
         setRouteName("Services")
         break;
-      case "/clare/sectors":
+
+      case location.pathname.includes("sectors"):
         setRouteName("Sectors")
         break;
-      case "/clare/clients":
+   
+      case location.pathname.includes("clients"):
         setRouteName("Clients")
         break;
-      case "/clare/news":
+   
+      case location.pathname.includes("news"):
         setRouteName("News")
         break;
-      case "/clare/news/all":
-        setRouteName("News")
-        break;
-      case "/clare/news/awards":
-        setRouteName("News")
-        break;
-      case "/clare/news/articles":
-        setRouteName("News")
-        break;
-      case "/clare/news/deals":
-        setRouteName("News")
-        break;
-      case "/clare/contact":
+      case location.pathname.includes("contact"):
         setRouteName("Contact")
         break;
-      case "/clare/transactions/all":
+      case location.pathname.includes("transactions"):
         setRouteName("Transactions")
         break;
-      case "/clare/transactions/2024":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2023":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2022":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2021":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2019":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2018":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2017":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2016":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2014":
-        setRouteName("Transactions")
-        break;
-      case "/clare/transactions/2013":
-        setRouteName("Transactions")
-        break;
-      case "/clare/careers":
+      case location.pathname.includes("careers"):
         setRouteName("Careers")
         break;
-      case "/clare/careers/graduates":
-        setRouteName("Careers")
-        break;
-      case "/clare/careers/experienced-hires":
-        setRouteName("Careers")
-        break;
-      case "/clare/team":
+      case location.pathname.includes("team"):
         setRouteName("Team")
         break;
-  
     
       default:
         setRouteName("Home")
         break;
     }
+    
    
   }, [location.pathname])
 

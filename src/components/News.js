@@ -10,7 +10,7 @@ function News() {
   return (
     <div className="news container-custom">
       
-        <h2 className="title-medium text-start">Our <span className="highlight-text">latest</span> news </h2>
+        <h2 className="title-medium text-start text-center">Our <span className="highlight-text">latest</span> news </h2>
       
      <Row gutter={[50, 30]} className="mbottom-80">
        <Col lg={12} md={12} sm={24}>

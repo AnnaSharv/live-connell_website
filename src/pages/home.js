@@ -42,9 +42,9 @@ function Home() {
       />
 
       <img src={BannerImg} width="100%" className='banner_1_img'/>
-      <h2 className='title-medium container-custom'>We offer detailed market knowledge combined with commercial insight</h2>
+      <h2 className='title-medium text container-custom'>We offer detailed market knowledge combined with commercial insight</h2>
       <p className='banner_p container-custom'>Connell Consulting is a leading commercial due diligence specialist for private equity firms and corporate clients. Our reports are based upon fresh and targeted primary research, plus comprehensive interviews with commissioners and other stakeholders at both local and national levels.</p>
-      <Row className='due-dilligence-banner container-custom'>
+      <Row className='due-dilligence-banner container-custom padding-block'>
         <Col sm={11} md={11} className="text">Produced commercial due diligence reports on over <strong>£7 billion</strong>  of health and social care transactions in the last year</Col>
         <Col sm={12} md={13} className="numbers">
           <div>

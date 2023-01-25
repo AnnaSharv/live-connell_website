@@ -49,7 +49,7 @@ function Contact() {
 
       {/* AIzaSyAqpbEOjSF7oDGaVvio9t5dDMEhM2cQqX8 */}
 
-      <Row className="contact-form mblock-80 container-custom" gutter={[10,30]}>
+      <Row className="contact-form mblock-80 container-custom" gutter={[20,30]}>
         <Col sm={24} md={12}>
           <p className=" title-medium text-start mt-0"> Contact us </p>
           <ContactUs />

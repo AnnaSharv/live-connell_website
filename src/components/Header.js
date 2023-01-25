@@ -27,7 +27,7 @@ function Header({
     !carousel 
      ? 
       <Row className={`langing-page-header mbottom-80 ${myClass}`} style={{paddingBottom: padding}}>
-        <Col sm={24}  md={12} className="container-custom">
+        <Col sm={24}  md={12} className="container-custom padding-block">
           {subheading && <h6 className="subheading">{subheading}</h6>}
           <h1 className="title m-0">{title}</h1>
         </Col>
@@ -39,7 +39,7 @@ function Header({
       : 
         <Carousel className='my-carousel' >
           <Row className={`langing-page-header ${myClass}`} style={{paddingBottom: padding}}>
-            <Col sm={24} md={12} className=" container-custom">
+            <Col sm={24} md={12} className=" container-custom padding-block">
               {subheading && <h6 className="subheading">{subheading}</h6>}
               <h1 className="title">{title}</h1>
               <Button type='primary button-outline'>Recent transactions <img src={Arrow} width="10" /> </Button>
@@ -49,23 +49,17 @@ function Header({
             </Col>
           </Row> 
           <Row className={`langing-page-header ${myClass}`} style={{paddingBottom: padding}}>
-            <Col  sm={24} md={12}>
+            <Col sm={24} md={12} className=" container-custom padding-block">
               {subheading && <h6 className="subheading">{subheading}</h6>}
               <h1 className="title">{title}</h1>
+              <Button type='primary button-outline'>Recent transactions <img src={Arrow} width="10" /> </Button>
             </Col>
-            <Col  sm={24} md={12} className="gradient-image" style={{"backgroundImage": "linear-gradient( 60deg, rgba(0, 0, 0, 0.0), rgba(29, 70, 150, 0.6)), url(https://www.connell-consulting.com/wp-content/uploads/2022/05/Full-Team-A-Hi-Res-scaled.jpg)"}}>
-              
-            </Col>
-          </Row> 
-          <Row className={`langing-page-header ${myClass}`} style={{paddingBottom: padding}}>
-            <Col  sm={24} md={12}>
-              {subheading && <h6 className="subheading">{subheading}</h6>}
-              <h1 className="title">{title}</h1>
-            </Col>
-            <Col  sm={24} md={12} className="gradient-image" style={{"backgroundImage": "linear-gradient( 60deg, rgba(0, 0, 0, 0.0), rgba(29, 70, 150, 0.6)), url(https://www.connell-consulting.com/wp-content/uploads/2022/05/Full-Team-A-Hi-Res-scaled.jpg)"}}>
-              
+            <Col  sm={24} md={12} className="gradient-image-banner">
+               <img src={"https://www.connell-consulting.com/wp-content/uploads/2022/05/Full-Team-A-Hi-Res-scaled.jpg"} alt="" width="100%" height="100%" style={{"maxHeight":"437px", "zIndex":"1"}}/>
             </Col>
           </Row> 
+         
+         
       </Carousel>
       }
       

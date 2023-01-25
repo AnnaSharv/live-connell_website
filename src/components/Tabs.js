@@ -16,14 +16,14 @@ function TabsCustom() {
 
   return (
     <>
-      <Navbar expand="lg" className="p-0">
+      <Navbar expand="lg" className="p-0 chosen-year-menu">
+        <div className="chosen-year">{routeName}</div>
         <Navbar.Brand href="#home" id="consulting" className="m-0">
-          <span className="d-none title-in-mobileview m-0">{routeName}</span>
+          <span className="d-none title-in-mobileview m-0">{routeName} x</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="nav nav-bottom">
           <Nav className="nav-left">
-            
             {transactionsAll?.map((transaction, i) => {
               return (
                 <Link to={transaction.header} key={i}>

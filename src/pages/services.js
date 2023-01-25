@@ -25,7 +25,7 @@ function Services() {
         myClass={"smaller-padding-header"}
       />
 
-      <Row gutter={20} className="paragraphs container-custom-margin">
+      <Row gutter={[20,30]} className="paragraphs container-custom-margin">
         <Col sm={24} md={12} className="text-decor">
          <strong>Connell Consulting</strong>  offers services to maximise value at every stage of the business cycle: Commercial Due Diligence, strategy, transformation and post-merger integration projects and operational improvement. Connell Consulting leads the market with our ability to obtain hard to get, insightful and granular information. Each new project requires fresh research: market and competitor dynamics are constantly shifting, rendering static databases rapidly out of date.
         </Col>
@@ -35,7 +35,7 @@ function Services() {
       </Row>
 
 
-      <Row gutter={20} className="container-custom">
+      <Row gutter={[20,30]} className="container-custom">
         <Col sm={24} md={12}>
           <img src={img2} alt="" className="image-with-box-shadow"/>
         </Col>

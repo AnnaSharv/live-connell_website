@@ -62,7 +62,7 @@ function Candidates() {
         )}
       </div>
 
-      <Row gutter={20} className="mtop-80 container-custom">
+      <Row gutter={[20,30]} className="mtop-80 container-custom">
         <Col sm={24} md={12}>
           {location.pathname.includes("graduates") ? (
             <img
