@@ -14,7 +14,7 @@ function Banner({ bg, customClass }) {
 
 
   return (
-    <div className={`${customClass} banner d-flex`} style={{ backgroundColor: bg }}>
+    <div className={`${customClass} banner d-flex full-width-section`} style={{ backgroundColor: bg }}>
       <AliceCarousel
         mouseTracking
         autoPlay={true}

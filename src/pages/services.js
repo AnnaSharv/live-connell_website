@@ -25,7 +25,7 @@ function Services() {
         myClass={"smaller-padding-header"}
       />
 
-      <Row gutter={20} className="paragraphs">
+      <Row gutter={20} className="paragraphs container-custom-margin">
         <Col sm={24} md={12} className="text-decor">
          <strong>Connell Consulting</strong>  offers services to maximise value at every stage of the business cycle: Commercial Due Diligence, strategy, transformation and post-merger integration projects and operational improvement. Connell Consulting leads the market with our ability to obtain hard to get, insightful and granular information. Each new project requires fresh research: market and competitor dynamics are constantly shifting, rendering static databases rapidly out of date.
         </Col>
@@ -35,9 +35,9 @@ function Services() {
       </Row>
 
 
-      <Row gutter={20}>
+      <Row gutter={20} className="container-custom">
         <Col sm={24} md={12}>
-          <img src={img2} alt="" className="services_f_img"/>
+          <img src={img2} alt="" className="image-with-box-shadow"/>
         </Col>
         <Col sm={24} md={12}>
         <h2 className="title-medium text-start">Commercial Due Diligence</h2>
@@ -56,7 +56,7 @@ function Services() {
               <li>Commercial due diligence for refinancing purposes</li>
             </ul>
 
-            <p className="text-regular">
+            <p className="text-regular text-regular-bold">
               We specialise in delivering insightful primary market research
               incorporating competitor intelligence, funding and regulatory
               outlook, stakeholder interviews and supply/demand dynamics. We have
@@ -73,8 +73,8 @@ function Services() {
       <img src="https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg" alt=""  className="full-width-img"/>
 
      
-      <h2 className="title-medium text-start">Strategy</h2>
-      <section className="service section">
+      <h2 className="title-medium text-start container-custom">Strategy</h2>
+      <section className="service section container-custom">
         <div className="section-left">
           <p>
             Our team has worked with clients on many diverse strategy consulting
@@ -84,7 +84,7 @@ function Services() {
         </div>
 
         <div className="section-right">
-          <p  className="text-regular" style={{"marginBottom": "30px"}}>
+          <p  className="text-regular text-regular-bold" style={{"marginBottom": "30px"}}>
            We help clients assess reasons for sub-optimal performance of assets
             (property, IT, HR etc), competitor benchmarking and market
             opportunities. Across larger portfolios we might suggest a number of
@@ -94,8 +94,8 @@ function Services() {
         </div>
       </section>
 
-      <h2 className="title-medium text-start">Operational Improvement</h2>
-      <section className="service section">
+      <h2 className="title-medium text-start container-custom">Operational Improvement</h2>
+      <section className="service section container-custom">
         <div className="section-left">
           <p>
             We can also help clients fill their services by leveraging our
@@ -105,7 +105,7 @@ function Services() {
         </div>
 
         <div className="section-right">
-          <p  className="text-regular">
+          <p  className="text-regular text-regular-bold">
             We do operational improvement projects for care homes and hospitals
             including cost cutting in the staff schedules, procurement
             optimisation and outsourcing non-core activities. We have experience

@@ -8,11 +8,11 @@ import Img1 from '../assets/images/Clare-Goncalo-and-team-scaled 18.jpg'
 function News() {
 
   return (
-    <div className="news">
+    <div className="news container-custom">
       
         <h2 className="title-medium text-start">Our <span className="highlight-text">latest</span> news </h2>
       
-     <Row gutter={50}>
+     <Row gutter={[50, 30]} className="mbottom-80">
        <Col lg={12} md={12} sm={24}>
           <img alt="" src={Img1} width="100%" />
 

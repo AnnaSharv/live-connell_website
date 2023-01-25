@@ -29,11 +29,10 @@ function Clients() {
       subheading="Our Clients"
       title="We have recently completed projects including refinancing, market strategy and commercial due diligence for the following clients:"
       img={Img}
-      order="imageText"
       myClass="smaller-padding-header banner-title-long"
       />
 
-      <div className="clients_image_array">
+      <div className="clients_image_array  container-custom">
         {imagesArray ? (
           Object.values(imagesArray).map((image, i) => {
             return (

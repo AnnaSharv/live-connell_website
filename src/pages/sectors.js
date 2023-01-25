@@ -12,11 +12,10 @@ function sectors() {
         title={"A consultancy that understands your sector."}
         paragraphs={["We have extensive experience in strategy and due diligence across the spectrum of health, social care and education. We are able to work with clients on all aspects from market research, deal origination and commercial due diligence to portfolio company strategy and management."]}
         img={Image}
-        order={"imageText"}
         myClass={"smaller-padding-header"}
       />
 
-      <p className="text-decor mblock-80">
+      <p className="text-decor mblock-80 container-custom-margin">
        <strong>
           We have extensive experience in strategy and due diligence across the spectrum of health, social care and education. We are able to work with clients on all aspects from market research, deal origination and commercial due diligence to portfolio company strategy and management.
        </strong> 

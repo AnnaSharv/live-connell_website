@@ -1,17 +1,16 @@
 import React from "react";
 import {Col, Row, Card} from 'antd'
 
-import {transactions} from '../data/transactions.js'
 
 
 function Transactions() {
 
   return (
-    <div className="transactions">
+    <div className="transactions container-custom">
       
         <h2 className="title-medium"> Recent Transactions  </h2>
       
-        <Row gutter={20}>
+        <Row gutter={[20, 30]}>
           <Col sm={24} md={6}>
             <Card bordered={false} 
             title="Year 2022"

@@ -45,7 +45,7 @@ function TabsCustom() {
               <Row className="transactions-image-container" gutter={20}>
                 {tr.images?.map((image, i) => {
                   return (
-                    <Col sm={12} md={6}>
+                    <Col sm={12} md={6} key={i}>
                       <img src={image} loading="lazy" width="100%"/>
                     </Col>
                   );

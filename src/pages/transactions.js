@@ -13,10 +13,9 @@ function Transactions() {
         subheading={"Recent transactions"}
         title={"Connell Consulting has worked on a large volume of transactions in the health, social care and special education space."}
         img={Image}
-        order={"imageText"}
         myClass={"recent-transactions banner-title-long"}
       />
-      <div className="tabsContent">
+      <div className="tabsContent container-custom">
         <h2>Choose year</h2>
         <TabsCustom />
       </div>

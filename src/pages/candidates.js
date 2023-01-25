@@ -1,135 +1,112 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Row, Col } from "antd";
+import Header from "../components/Header";
 
 function Candidates() {
   const location = useLocation();
   const pathname = location.pathname;
   return (
     <div className="candidates">
-      <Row
-        className={`langing-page-header`}
-        // style={{ paddingBottom: padding }}
-      >
-        <Col md={6} sm={12}>
-          <h6 className="subheading">Careers</h6>
-          <h1 className="title">
-            {pathname.includes("graduates")
-              ? "Graduates recruitment"
-              : "Experienced hires"}
-          </h1>
-        </Col>
+      <Header
+        title={
+          pathname.includes("graduates")
+            ? "Graduates recruitment"
+            : "Experienced hires"
+        }
+        subheading={"Careers"}
+      />
 
-        <Col md={6} sm={12} className="service">
-          <p className="candidates-header">How to apply</p>
-          <ul className="sector-card">
-            <li>
-              Candidates should email their CV / resume and covering letter to
-              careers@connell-consulting.com
-            </li>
-            <li>
-              Successful candidates are then invited to our office in London for
-              an interview.
-            </li>
-            <li>We are now accepting applications for Business Analysts.</li>
-          </ul>
-        </Col>
-      </Row>
+      <div className="service container-custom">
+        <div className="title-medium text-start mt-0">The role</div>
+        {pathname.includes("graduates") ? (
+          <Row gutter={20} className="mbottom-80">
+            <Col className="text-decor" sm={24} md={12}>
+              Graduates will join <strong> Connell Consulting </strong> as
+              Business Analysts. Business Analysts play a vital role in the
+              team, conducting primary and secondary research, performing
+              quantitative and qualitative analysis, drawing strategic
+              conclusions with support from the wider team, and developing
+              PowerPoint or Excel output for inclusion in the final report.
+            </Col>
+            <Col className="text-loose" sm={24} md={12}>
+              Analysts may have the opportunity to take ownership of smaller
+              projects early on, with the support of a Consultant, to help build
+              responsibility and support rapid progression. Analysts will have
+              the opportunity to attend client meetings and help present
+              findings back to clients. They will also have the opportunity to
+              attend sector conferences and networking events.
+            </Col>
+          </Row>
+        ) : (
+          <Row gutter={20} className="mbottom-80">
+            <Col className="text-decor" sm={24} md={12}>
+              Consultants typically join Connell Consulting as an experienced
+              professional, with extensive proven experience of carrying out
+              consulting work. <br />
+              As a Consultant you’ll be responsible for managing teams in the
+              design, development, and delivery of consulting projects. In
+              delivering projects, you will be working in a team of like-minded
+              professionals to create reports.
+            </Col>
+            <Col className="text-loose" sm={24} md={12}>
+              You will be expected to assist with business proposals and
+              development initiatives, including supporting the delivery of
+              pitches for client work. <br />
+              There will be opportunities to participate in formal and informal
+              learning, including attendance at sector conferences. There will
+              also be a wide range of opportunities to represent Connell
+              Consulting at networking events and awards evenings.
+            </Col>
+          </Row>
+        )}
+      </div>
 
-      <Row style={{ marginBottom: "140px" }} className="candidates_wrapper">
-        <Col className="role-and-package service" md={6} xs={12}>
-          <div className="candidates-header">The role</div>
-          {pathname.includes("graduates") ? (
-            <>
-              <p className="paragraph">
-                Graduates will join Connell Consulting as Business Analysts.
-                Business Analysts play a vital role in the team, conducting
-                primary and secondary research, performing quantitative and
-                qualitative analysis, drawing strategic conclusions with support
-                from the wider team, and developing PowerPoint or Excel output
-                for inclusion in the final report.
-              </p>
-
-              <p className="paragraph">
-                Analysts may have the opportunity to take ownership of smaller
-                projects early on, with the support of a Consultant, to help
-                build responsibility and support rapid progression.{" "}
-              </p>
-
-              <p className="paragraph">
-                Analysts will have the opportunity to attend client meetings and
-                help present findings back to clients. They will also have the
-                opportunity to attend sector conferences and networking events.
-              </p>
-            </>
+      <Row gutter={20} className="mtop-80 container-custom">
+        <Col sm={24} md={12}>
+          {location.pathname.includes("graduates") ? (
+            <img
+              src="https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015.jpg"
+              alt=""
+              className="image-with-box-shadow"
+              style={{ maxWidth: "468px" }}
+            />
           ) : (
-            <>
-              <p className="paragraph">
-                Consultants typically join Connell Consulting as an experienced
-                professional, with extensive proven experience of carrying out
-                consulting work.
-              </p>
-
-              <p className="paragraph">
-                As a Consultant you\’ll be responsible for managing teams in the
-                design, development, and delivery of consulting projects. In
-                delivering projects, you will be working in a team of
-                like-minded professionals to create reports.
-              </p>
-              <p className="paragraph">
-                You will be expected to assist with business proposals and
-                development initiatives, including supporting the delivery of
-                pitches for client work.
-              </p>
-              <p className="paragraph">
-                There will be opportunities to participate in formal and
-                informal learning, including attendance at sector conferences.
-                There will also be a wide range of opportunities to represent
-                Connell Consulting at networking events and awards evenings.
-              </p>
-            </>
+            <img
+              src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Saiyna-George-Charlotte-Lilya_WEB-RES_009.jpg"
+              alt=""
+              className="image-with-box-shadow"
+              style={{ maxWidth: "468px" }}
+            />
           )}
-
-          <div className="candidates-header">Package</div>
-          <ul className="sector-card">
-            <li>Full time role </li>
-            <li>Competitive salary (subject to experience)</li>
-            <li>25 days annual leave plus UK bank holidays</li>
-            <li>Company pension scheme</li>
-          </ul>
         </Col>
+        <Col sm={24} md={12}>
+          <div className="title-medium text-start mt-0">
+            Application criteria
+          </div>
 
-        <Col className="service application-criteria" md={6} xs={12}>
-          <div className="candidates-header">Application criteria</div>
-          {pathname.includes("graduates") ? (
-            <p>
+          {location.pathname.includes("graduates") ? (
+            <p className="text-regular text-regular-bold">
               We are currently looking for a Business Analyst who will
               compliment an existing team of Consultants, Researchers, and
               Knowledge Management staff across our business.
             </p>
           ) : (
-            <>
-              <p>
-                We are always on the look-out for candidates with relevant
-                experience, particularly of carrying out qualitative and
-                quantitative research, managing others, and interacting with
-                clients.
-              </p>
-
-              <p>
-                Whilst prior experience of conducting consultancy work in the
-                health, social care or education sectors is preferable, this is
-                not a pre-requisite for the job. We are also keen to receive
-                applications from candidates with experience in consulting
-                (general), corporate finance or those with corporate
-                backgrounds.
-              </p>
-            </>
+            <p className="text-regular text-regular-bold">
+              We are always on the look-out for candidates with relevant
+              experience, particularly of carrying out qualitative and
+              quantitative research, managing others, and interacting with
+              clients. <br /> Whilst prior experience of conducting consultancy
+              work in the health, social care or education sectors is
+              preferable, this is not a pre-requisite for the job. <br /> We are
+              also keen to receive applications from candidates with experience
+              in consulting (general), corporate finance or those with corporate
+              backgrounds.
+            </p>
           )}
 
-          {pathname.includes("graduates") ? (
-            <>
+          {location.pathname.includes("graduates") ? (
+            <div className="ul mt-2">
               <ul className="sector-card">
                 <li>
                   A strong academic record, including a degree from a
@@ -165,15 +142,16 @@ function Candidates() {
                   Experience of working with MS Office (Word, Excel and
                   PowerPoint)
                 </li>
+
                 <li>
                   Experience of using Google apps or a good knowledge of UK
                   geography, as our projects are mainly UK based
                 </li>
                 <li>Right to work in the UK</li>
               </ul>
-            </>
+            </div>
           ) : (
-            <>
+            <div className="ul mt-2">
               <ul className="sector-card">
                 <li>
                   A strong academic record, including an MBA from a top business
@@ -219,9 +197,85 @@ function Candidates() {
                 </li>
                 <li>Right to work in the UK</li>
               </ul>
-            </>
+            </div>
           )}
         </Col>
+      </Row>
+
+      <Row gutter={[20,30]} className="mtop-80 container-custom">
+      {location.pathname.includes("graduates") ? (
+          <>
+            <Col sm={24} md={12}  className="packages-card">
+              <h2 className="title-medium text-start m-0">Package</h2>
+
+              <div className="ul mt-3">
+                <ul>
+                  <li>Full time, permanent role</li>
+                  <li>Competitive salary (subject to experience)</li>
+                  <li>
+                    25 days annual leave plus UK bank holidays Company pension
+                    scheme
+                  </li>
+                  <li>Private healthcare and dental insurance Free lunch</li>
+                </ul>
+              </div>
+            </Col>
+            <Col sm={24} md={12}  className="packages-card">
+              <h2 className="title-medium text-start m-0">How to apply</h2>
+              <div className="ul mt-3">
+                <ul>
+                  <li>
+                    Candidates should email their CV / resume and covering
+                    letter to careers@connell-consulting.com
+                  </li>
+                  <li>
+                    Successful candidates are then invited to our office in
+                    London for an interview
+                  </li>
+                  <li>
+                    We are now accepting applications for Business Analysts.
+                  </li>
+                </ul>
+              </div>
+            </Col>
+          </>
+        ) : (
+          <>
+            <Col sm={24} md={12}  className="packages-card">
+              <h2 className="title-medium text-start m-0">Package</h2>
+
+              <div className="ul mt-3">
+                <ul>
+                  <li>Full time, permanent role</li>
+                  <li>Competitive salary (subject to experience)</li>
+                  <li>
+                    25 days annual leave plus UK bank holidays Company pension
+                    scheme
+                  </li>
+                  <li>Private healthcare and dental insurance Free lunch</li>
+                </ul>
+              </div>
+            </Col>
+            <Col sm={24} md={12}  className="packages-card">
+              <h2 className="title-medium text-start m-0">How to apply</h2>
+              <div className="ul mt-3">
+                <ul>
+                  <li>
+                    Candidates should email their CV / resume and covering
+                    letter to careers@connell-consulting.com
+                  </li>
+                  <li>
+                    Successful candidates are then invited to our office in
+                    London for an interview
+                  </li>
+                  <li>
+                    We are now accepting applications for Business Analysts.
+                  </li>
+                </ul>
+              </div>
+            </Col>
+          </>
+        )}
       </Row>
     </div>
   );

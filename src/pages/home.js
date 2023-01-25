@@ -42,10 +42,10 @@ function Home() {
       />
 
       <img src={BannerImg} width="100%" className='banner_1_img'/>
-      <h2 className='title-medium'>We offer detailed market knowledge combined with commercial insight</h2>
-      <p className='banner_p'>Connell Consulting is a leading commercial due diligence specialist for private equity firms and corporate clients. Our reports are based upon fresh and targeted primary research, plus comprehensive interviews with commissioners and other stakeholders at both local and national levels.</p>
-      <Row className='due-dilligence-banner'>
-        <Col sm={12} md={11} className="text">Produced commercial due diligence reports on over <strong>£7 billion</strong>  of health and social care transactions in the last year</Col>
+      <h2 className='title-medium container-custom'>We offer detailed market knowledge combined with commercial insight</h2>
+      <p className='banner_p container-custom'>Connell Consulting is a leading commercial due diligence specialist for private equity firms and corporate clients. Our reports are based upon fresh and targeted primary research, plus comprehensive interviews with commissioners and other stakeholders at both local and national levels.</p>
+      <Row className='due-dilligence-banner container-custom'>
+        <Col sm={11} md={11} className="text">Produced commercial due diligence reports on over <strong>£7 billion</strong>  of health and social care transactions in the last year</Col>
         <Col sm={12} md={13} className="numbers">
           <div>
             <span><CountUp start={480} end={500}  duration={1}/></span>
@@ -59,6 +59,7 @@ function Home() {
             <span><CountUp start={0} end={7} suffix="bn" duration={1.2} /></span>
             <span>Transactions</span>
           </div>
+
         </Col>
 
       </Row>
@@ -86,7 +87,7 @@ function Home() {
     
       <Awards />
 
-      <Row className='team-grid'>
+      <Row className='team-grid container-custom' gutter={[0,30]}>
         <Col sm={24} md={12} lg={9}> 
           <h1>Specialists in health, social care, education, pharma</h1> 
           <p className='text-regular'>Connell Consulting’s success is based on the wealth of experience of our people. We have a team of professionals with expertise across a wide variety of sectors, deal sizes, and transaction types.</p>

@@ -106,53 +106,48 @@ function Navigation() {
   }, [location.pathname])
 
 
-  let handleSignOut = () => {
-    if(user_status_localStorage) {
-       signOut(auth).then(() => {
-      // Sign-out successful.
-       localStorage.setItem("userStatus", null)
-   
-       navigate("/clare")
-    }).catch((error) => {console.log(error)});
-    }
-   
-    navigate("/clare/login")
-  }
+ 
 
   return (
     <div className='navigations'>
 
-    <Navbar expand="lg">
-        <Navbar.Brand href="/clare"><img src={Logo} width="232" height="100" alt="Connell_consulting"/></Navbar.Brand>
+    <Navbar expand="lg" className='nav-up container-custom'>
+        <Navbar.Brand href="/clare"><img src={Logo} width="232" height="100" alt="Connell_consulting" className='logo' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className='nav nav-top' style={{"justifyContent": "flex-end"}}>
+        <Navbar.Collapse id="basic-navbar-nav" className='nav nav-top' >
 
           <Nav className="nav-right">
+                <Link to="/clare/"> <li className={routeName === 'Home' ? 'active-link navlink_upper' : "navlink_upper navlink_upper"}> Home </li> </Link>
+                <Link to="/clare/services"> <li className={routeName === 'Services' ? 'active-link navlink_upper' : "navlink_upper"}> Services </li> </Link>
+                <Link to="/clare/sectors"> <li className={routeName === 'Sectors' ? 'active-link navlink_upper' : "navlink_upper"}> Sectors </li> </Link>
+                <Link to="/clare/clients"> <li className={routeName === 'Clients' ? 'active-link navlink_upper' : "navlink_upper"}> Our clients </li> </Link>
+                <Link to="/clare/team"><li className={routeName === 'Team' ? 'active-link navlink_upper' : "navlink_upper"}> Team </li></Link>  
+                <Link to="/clare/news/all"> <li className={routeName === 'News' ? 'active-link navlink_upper' : "navlink_upper"}> News </li> </Link>
+                <Link to="/clare/careers"><li className={routeName === 'Careers' ? 'active-link navlink_upper' : "navlink_upper"}> Careers </li></Link>  
+                <Link to="/clare/contact"> <li className={routeName === 'Contact' ? 'active-link navlink_upper' : "navlink_upper"}> Contact </li> </Link>
+                <Link to="/clare/transactions/all"><li className='button-solid navlink_upper'> Recent transactions </li></Link>  
+
                 <li style={{"gridArea": "area-1"}}> info@connell-consulting.com </li>
                 <li style={{"gridArea": "area-2"}}> +44 (0)20 7371 8142 </li>
                 <li style={{"gridArea": "area-3"}}> <img src={Twitter}  alt="logo_connell_twitter"/> </li>
                 <li style={{"gridArea": "area-4"}}> <img src={Linkedin}  alt="linkedin"/> </li>
-                <Link to="/clare/login" onClick={handleSignOut}>
-                  <li> {user_status_localStorage == true ? "გამოსვლა" : "შესვლა"} </li>
-                </Link>  
           </Nav>
         </Navbar.Collapse>
     </Navbar>
 
-    <Navbar expand="lg">
-        <Navbar.Brand href="/clare" id="consulting"> <span className='d-none title-in-mobileview'>{routeName}</span></Navbar.Brand>
+    <Navbar expand="lg" className='line nav-down container-custom'>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className='nav nav-bottom'>
           <Nav className="nav-left"></Nav>
           <Nav className="nav-right">
-            <Link to="/clare/"> <li className={routeName === 'Home' ? 'active-link' : undefined}> Home </li> </Link>
-            <Link to="/clare/services"> <li className={routeName === 'Services' ? 'active-link' : undefined}> Services </li> </Link>
-            <Link to="/clare/sectors"> <li className={routeName === 'Sectors' ? 'active-link' : undefined}> Sectors </li> </Link>
-            <Link to="/clare/clients"> <li className={routeName === 'Clients' ? 'active-link' : undefined}> Our clients </li> </Link>
-            <Link to="/clare/team"><li className={routeName === 'Team' ? 'active-link' : undefined}> Team </li></Link>  
-            <Link to="/clare/news"> <li className={routeName === 'News' ? 'active-link' : undefined}> News </li> </Link>
-            <Link to="/clare/careers"><li className={routeName === 'Careers' ? 'active-link' : undefined}> Careers </li></Link>  
-            <Link to="/clare/contact"> <li className={routeName === 'Contact' ? 'active-link' : undefined}> Contact </li> </Link>
+            <Link to="/clare/"> <li className={routeName === 'Home' ? 'active-link' : "navlink_down"}> Home </li> </Link>
+            <Link to="/clare/services"> <li className={routeName === 'Services' ? 'active-link' : "navlink_down"}> Services </li> </Link>
+            <Link to="/clare/sectors"> <li className={routeName.includes('Sectors') ? 'active-link' : "navlink_down"}> Sectors </li> </Link>
+            <Link to="/clare/clients"> <li className={routeName === 'Clients' ? 'active-link' : "navlink_down"}> Our clients </li> </Link>
+            <Link to="/clare/team"><li className={routeName === 'Team' ? 'active-link' : "navlink_down"}> Team </li></Link>  
+            <Link to="/clare/news/all"> <li className={routeName === 'News' ? 'active-link' : "navlink_down"}> News </li> </Link>
+            <Link to="/clare/careers"><li className={routeName === 'Careers' ? 'active-link' : "navlink_down"}> Careers </li></Link>  
+            <Link to="/clare/contact"> <li className={routeName === 'Contact' ? 'active-link' : "navlink_down"}> Contact </li> </Link>
             <Link to="/clare/transactions/all"><li className='button-solid'> Recent transactions </li></Link>  
           </Nav>
         </Navbar.Collapse>

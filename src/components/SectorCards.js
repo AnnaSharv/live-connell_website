@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 function SectorCards() {
   return (
-    <Row className="sectors-container" gutter={[20,20]}>
+    <Row className="sectors-container container-custom" gutter={[20,20]}>
       <Col className="sector-card" sm={24} md={8}>
         <span> <img src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Patrick-Alex-Cheran_WEB-RES_012.jpg" width="100%" alt="" /></span>
         <Link to="social-care"><p>Social Care</p></Link> 

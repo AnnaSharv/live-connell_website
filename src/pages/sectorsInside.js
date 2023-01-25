@@ -23,7 +23,7 @@ function SectorsInside({piePercent}) {
     <div className='sectors-inside'>
         <Header title={title} subheading={"Sectors"} />
 
-        <Row className='mblock-80'>
+        <Row className='mblock-80 container-custom'>
             <Col sm={24} md={12}>
                 <Row gutter={20}>
                     <Col sm={24} md={8}>
@@ -55,11 +55,11 @@ function SectorsInside({piePercent}) {
             </Col>
         </Row>
 
-        <p className='text-medium p-large'>
+        <p className='text-medium p-large container-custom'>
             Connell Consulting has established a strong reputation within the social care sector, with the team highly regarded by investors and operators for their primary research driven approach. With unrivalled access to commissioners, supported by a wealth of industry expertise, Connell Consulting is able deliver real insight to ensure providers meet the rising demand for high quality social care provision.
         </p>
 
-        <div className='ul'>
+        <div className='ul container-custom'>
             <p className="text-regular mt-5"> The team is renowned for their specialist work in the following fields: </p>
 
                 <ul className='mt-2'>
