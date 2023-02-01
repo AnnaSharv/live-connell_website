@@ -21,8 +21,8 @@ const Modal = ({memberImg, memberName, memberDescription, memberMail, memberPosi
       <span onClick={showModal} className="view-profile">
         View profile <img src={Arrow} alt="" width="20px" />
       </span>
-      <MyModal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} className="team-modal" width={1180}>
-        <Row gutter={80}>
+      <MyModal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} className="team-modal " width={1180}>
+        <Row gutter={80} className="container-custom">
             <Col sm={24} md={10}>
                 <img alt="" src={memberImg} width="100%" height="400px" className='team_member_img'/>
             </Col>
@@ -38,7 +38,7 @@ const Modal = ({memberImg, memberName, memberDescription, memberMail, memberPosi
         </Row>
 
 
-        <Transactions />
+        <Transactions modal={true}/>
       </MyModal>
     </>
   );

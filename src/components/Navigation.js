@@ -28,7 +28,6 @@ function Navigation() {
       case location.pathname.includes("services"):
         setRouteName("Services")
         break;
-
       case location.pathname.includes("sectors"):
         setRouteName("Sectors")
         break;
@@ -51,6 +50,9 @@ function Navigation() {
         break;
       case location.pathname.includes("team"):
         setRouteName("Team")
+        break;
+      case location.pathname.includes("policy") || location.pathname.includes("cookies") || location.pathname.includes("terms_and_conditions"):
+        setRouteName("footer")
         break;
     
       default:
@@ -86,7 +88,7 @@ function Navigation() {
                 <li style={{"gridArea": "area-1"}}> info@connell-consulting.com </li>
                 <li style={{"gridArea": "area-2"}}> +44 (0)20 7371 8142 </li>
                 <li style={{"gridArea": "area-3"}}> <img src={Twitter}  alt="logo_connell_twitter"/> </li>
-                <li style={{"gridArea": "area-4"}}> <img src={Linkedin}  alt="linkedin"/> </li>
+                <li style={{"gridArea": "area-4"}} className="linkedinlogo"> <img src={Linkedin}  alt="linkedin"/> </li>
           </Nav>
         </Navbar.Collapse>
     </Navbar>

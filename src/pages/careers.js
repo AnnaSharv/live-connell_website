@@ -37,7 +37,7 @@ function careers() {
       
       />
 
-      <Row gutter={20} className="paragraphs mbottom-80  container-custom">
+      <Row gutter={[20,30]} className="paragraphs mblock-80  container-custom">
         <Col sm={24} md={12} className="text-decor">
           <strong>Connell Consulting</strong> has a highly skilled team of
           Analysts and Consultants with a wealth of experience across the
@@ -54,12 +54,16 @@ function careers() {
         </Col>
       </Row>
 
-      <img
+
+<div className="container-custom mbottom-80 ">
+   <img
         src={Img1}
         alt=""
         width="100%"
-        className="image-with-box-shadow mbottom-80"
+        className="image-with-box-shadow "
       />
+</div>
+     
 
       <p className="text-loose mb-0  container-custom">
         Whilst the nature of consulting means that we are a hardworking team, we
@@ -75,7 +79,7 @@ function careers() {
         internal operations, such as marketing, recruitment, or training.
       </p>
 
-      <h1 className="title-medium text-start  container-custom" style={{ maxWidth: "580px" }}>
+      <h1 className="title-medium text-start  container-custom" style={{ maxWidth: "800px" }}>
         Candidates interested in joining Connell Consulting should have:
       </h1>
       <div className="ul mbottom-80  container-custom">

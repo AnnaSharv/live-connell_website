@@ -68,15 +68,15 @@ function Candidates() {
             <img
               src="https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015.jpg"
               alt=""
-              className="image-with-box-shadow"
-              style={{ maxWidth: "468px" }}
+              className="image-with-box-shadow img-role"
+              style={{ maxWidth: "468px", minHeight: "431px", objectFit: "cover" }}
             />
           ) : (
             <img
               src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Saiyna-George-Charlotte-Lilya_WEB-RES_009.jpg"
               alt=""
-              className="image-with-box-shadow"
-              style={{ maxWidth: "468px" }}
+              className="image-with-box-shadow img-role"
+              style={{ maxWidth: "468px", height: "431px",  objectFit: "cover" }}
             />
           )}
         </Col>
@@ -202,10 +202,10 @@ function Candidates() {
         </Col>
       </Row>
 
-      <Row gutter={[20,30]} className="mtop-80 container-custom">
+      <div className="mtop-80 container-custom news-grid-small packages-grid-small ">
       {location.pathname.includes("graduates") ? (
           <>
-            <Col sm={24} md={12}  className="packages-card">
+            <div className="packages-card">
               <h2 className="title-medium text-start m-0">Package</h2>
 
               <div className="ul mt-3">
@@ -219,8 +219,8 @@ function Candidates() {
                   <li>Private healthcare and dental insurance Free lunch</li>
                 </ul>
               </div>
-            </Col>
-            <Col sm={24} md={12}  className="packages-card">
+            </div>
+            <div className="packages-card">
               <h2 className="title-medium text-start m-0">How to apply</h2>
               <div className="ul mt-3">
                 <ul>
@@ -237,11 +237,11 @@ function Candidates() {
                   </li>
                 </ul>
               </div>
-            </Col>
+            </div>
           </>
         ) : (
           <>
-            <Col sm={24} md={12}  className="packages-card">
+            <div className="packages-card">
               <h2 className="title-medium text-start m-0">Package</h2>
 
               <div className="ul mt-3">
@@ -255,8 +255,8 @@ function Candidates() {
                   <li>Private healthcare and dental insurance Free lunch</li>
                 </ul>
               </div>
-            </Col>
-            <Col sm={24} md={12}  className="packages-card">
+            </div>
+            <div className="packages-card">
               <h2 className="title-medium text-start m-0">How to apply</h2>
               <div className="ul mt-3">
                 <ul>
@@ -273,10 +273,10 @@ function Candidates() {
                   </li>
                 </ul>
               </div>
-            </Col>
+            </div>
           </>
         )}
-      </Row>
+      </div>
     </div>
   );
 }

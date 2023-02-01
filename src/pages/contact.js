@@ -11,7 +11,7 @@ function Contact() {
   return (
     <div>
       <Header
-        subheading="Contact"
+        // subheading="Contact"
         title="Contact Us"
         padding="0px"
         myClass="noclass"

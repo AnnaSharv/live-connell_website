@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Header from '../components/Header.js'
 import {Row, Col, Carousel} from 'antd'
 import CountUp from 'react-countup';
-
+import {Link} from 'react-router-dom'
 //components
 import Banner from '../components/BannerCarousel'
 import Services from '../components/OurServicesShort.js'
@@ -19,12 +19,26 @@ import BannerImg3 from '../assets/images/c_img_3.png'
 import Arrow from "../assets/images/arrow.svg";
 
 
+// import { collection, getDocs } from "firebase/firestore";
+// import {db} from '../firebase.js'
 //team
 import {team} from '../data/team'
 
 
 
 function Home() {
+  // useEffect(() => {
+  //    async function getBlogs() {
+  //      const querySnapshot = await getDocs(collection(db, "blogs"));
+  //      querySnapshot.forEach((doc) => {
+  //        // doc.data() is never undefined for query doc snapshots
+  //        console.log(doc.id, " => ", doc.data());
+  //      });
+  //    }
+
+  //    getBlogs()
+  // }, [])
+
   return (
     <div>
       <Header 
@@ -41,8 +55,8 @@ function Home() {
       carousel={true}
       />
 
-      <img src={BannerImg} width="100%" className='banner_1_img'/>
-      <h2 className='title-medium text container-custom'>We offer detailed market knowledge combined with commercial insight</h2>
+      <img src={BannerImg} width="100%" className='banner_1_img container-custom'/>
+      <h2 className='title-medium text container-custom' style={{marginTop: "30px"}}><strong>We offer detailed market knowledge combined with commercial insight</strong></h2>
       <p className='banner_p container-custom'>Connell Consulting is a leading commercial due diligence specialist for private equity firms and corporate clients. Our reports are based upon fresh and targeted primary research, plus comprehensive interviews with commissioners and other stakeholders at both local and national levels.</p>
       <Row className='due-dilligence-banner container-custom padding-block'>
         <Col sm={11} md={11} className="text">Produced commercial due diligence reports on over <strong>£7 billion</strong>  of health and social care transactions in the last year</Col>
@@ -66,7 +80,7 @@ function Home() {
       
       <Services />
 
-      <h2 className="title-medium"><span className="highlight-text">Our</span> clients </h2>
+      <h2 className="title-medium"><span className="highlight-text">Our</span> Clients </h2>
 
       <Carousel className='home-carousel' autoplay dots={false}>
         <Row>
@@ -87,13 +101,17 @@ function Home() {
     
       <Awards />
 
-      <Row className='team-grid container-custom' gutter={[0,30]}>
-        <Col sm={24} md={12} lg={9}> 
-          <h1>Specialists in health, social care, education, pharma</h1> 
+      <Row className='team-grid container-custom' gutter={[20,30]}>
+        <Col sm={24} md={9} lg={9}> 
+          <h1>
+          Specialists in health, social care, education, pharma, vets and students accommadation
+          </h1> 
           <p className='text-regular'>Connell Consulting’s success is based on the wealth of experience of our people. We have a team of professionals with expertise across a wide variety of sectors, deal sizes, and transaction types.</p>
-          <button>Meet our experts <img alt="" src={Arrow} style={{"marginBottom": "3px"}} /></button>
+          <Link to="team">
+            <button>Meet our experts <img alt="" src={Arrow} style={{"marginBottom": "3px"}} /></button>
+          </Link>  
         </Col>
-        <Col sm={24} md={12} lg={15} className="team-grid-img"> 
+        <Col sm={24} md={15} lg={15} className="team-grid-img"> 
           {team && team.map((member, i) => {
             return <img src={Object.values(member.image)[0]} alt="" width="120px" key={i}/>
           })}

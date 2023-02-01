@@ -25,7 +25,7 @@ function Services() {
         myClass={"smaller-padding-header"}
       />
 
-      <Row gutter={[20,30]} className="paragraphs container-custom-margin">
+      <Row gutter={[20,30]} className="paragraphs container-custom-margin  mblock-80">
         <Col sm={24} md={12} className="text-decor">
          <strong>Connell Consulting</strong>  offers services to maximise value at every stage of the business cycle: Commercial Due Diligence, strategy, transformation and post-merger integration projects and operational improvement. Connell Consulting leads the market with our ability to obtain hard to get, insightful and granular information. Each new project requires fresh research: market and competitor dynamics are constantly shifting, rendering static databases rapidly out of date.
         </Col>
@@ -56,7 +56,7 @@ function Services() {
               <li>Commercial due diligence for refinancing purposes</li>
             </ul>
 
-            <p className="text-regular text-regular-bold">
+            <p className="text-regular text-regular-bold" style={{"fontFamily": "'MonserratMedium'"}}>
               We specialise in delivering insightful primary market research
               incorporating competitor intelligence, funding and regulatory
               outlook, stakeholder interviews and supply/demand dynamics. We have
@@ -70,7 +70,7 @@ function Services() {
         </Col>
       </Row>
     
-      <img src="https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg" alt=""  className="full-width-img"/>
+      <img src="https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg" alt="" className="full-width-img mblock-109"/>
 
      
       <h2 className="title-medium text-start container-custom">Strategy</h2>
