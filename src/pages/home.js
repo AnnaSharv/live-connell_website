@@ -18,7 +18,8 @@ import BannerImg3 from '../assets/images/c_img_3.png'
 
 import Arrow from "../assets/images/arrow.svg";
 
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 // import { collection, getDocs } from "firebase/firestore";
 // import {db} from '../firebase.js'
 //team
@@ -99,7 +100,7 @@ function Home() {
 
       <Banner bg="#B4C7E760" customClass="c-alice-carousel"/>
     
-      <Awards />
+      <Awards /> 
 
       <Row className='team-grid container-custom' gutter={[20,30]}>
         <Col sm={24} md={9} lg={9}> 
@@ -113,7 +114,7 @@ function Home() {
         </Col>
         <Col sm={24} md={15} lg={15} className="team-grid-img"> 
           {team && team.map((member, i) => {
-            return <img src={Object.values(member.image)[0]} alt="" width="120px" key={i}/>
+            return <img src={Object.values(member.image)[0]} alt="" width="120px" key={i} effect="blur"/>
           })}
         </Col>
       </Row>

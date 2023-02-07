@@ -22,6 +22,7 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 
 import MetaInfo from "./pages/metaInfo";
+import NewsInside from "./pages/newsInside";
 
 
 
@@ -19425,8 +19426,19 @@ function App() {
   const Wrapper = ({children}) => {
     const location = useLocation();
     useLayoutEffect(() => {
-      document.documentElement.scrollTo(0, 0);
+      if(!location.pathname.includes("news") 
+          || !location.pathname.includes("transactions") 
+          || !location.pathname.includes("news") 
+          || !location.pathname.includes("careers")
+          || !location.pathname.includes("policy")
+          || !location.pathname.includes("cookies")
+          || !location.pathname.includes("terms_and_conditions"))
+      {
+        document.documentElement.scrollTo(0, 0);
+      }
+        
     }, [location.pathname]);
+    
     return children
   } 
 
@@ -19467,6 +19479,7 @@ function App() {
               <Route path="/clare/sectors/*" element={<SectorsInside />} />
               <Route path="/clare/clients" element={<Clients />} />
               <Route path="/clare/news/*" element={<News />} />
+              <Route path="/clare/news/blogs/*" element={<NewsInside />} />
               <Route path="/clare/contact" element={<Contact />} />
               <Route path="/clare/transactions/*" element={<Transactions />} />
               <Route path="/clare/careers" element={<Careers />} />

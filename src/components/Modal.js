@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Transactions from '../components/Transactions'
 import Arrow from '../assets/images/arrow.svg'
 import Mail from '../assets/images/mail_icon.svg'
+import parse from 'html-react-parser';
 
 const Modal = ({memberImg, memberName, memberDescription, memberMail, memberPosition}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +30,7 @@ const Modal = ({memberImg, memberName, memberDescription, memberMail, memberPosi
             <Col sm={24} md={14}>
                 <h1 className='member_text-header'>{memberName}</h1>
                 <h2 className='member_text-subheader'>{memberPosition}</h2>
-                <p className='text-regular text-regular-bold'>{memberDescription}</p>
+                <div className='text-regular text-regular-bold'>{parse(memberDescription)}</div>
               
                 {
                     memberMail && <p className='mt-4 text-regular text-regular-bold'> <img src={Mail} alt="" width="22px" /> {memberMail} </p>
