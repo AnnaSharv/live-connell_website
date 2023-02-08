@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header.js'
-import {Row, Col, Carousel} from 'antd'
-import CountUp from 'react-countup';
-import {Link} from 'react-router-dom'
+import { Row, Col, Carousel } from 'antd'
+import CountUp from 'react-countup'
+import { Link } from 'react-router-dom'
 //components
 import Banner from '../components/BannerCarousel'
 import Services from '../components/OurServicesShort.js'
@@ -16,16 +16,14 @@ import BannerImg1 from '../assets/images/c_img_1.png'
 import BannerImg2 from '../assets/images/c_img_2.png'
 import BannerImg3 from '../assets/images/c_img_3.png'
 
-import Arrow from "../assets/images/arrow.svg";
+import Arrow from '../assets/images/arrow.svg'
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 // import { collection, getDocs } from "firebase/firestore";
 // import {db} from '../firebase.js'
 //team
-import {team} from '../data/team'
-
-
+import { team } from '../data/team'
 
 function Home() {
   // useEffect(() => {
@@ -42,80 +40,122 @@ function Home() {
 
   return (
     <div>
-      <Header 
-      title="Specialists in health, social care, education, pharma"
-      subheading="Connell Consulting"
-      paragraphs={[
-        "Connell Consulting offer private equity firms and corporate clients detailed market knowledge combined with commercial insight. Our commercial due diligence and strategic reports provide granular and comprehensive analysis. Our reports are based upon fresh and targeted primary research, plus comprehensive interviews with commissioners and other stakeholders at both local and national levels.",
-        "Produced commercial due diligence reports on over £7 billion of health and social care transactions in the last year"
-      ]}
-      highlight={true}
-      imageplural={false}
-      img={HeaderImg}
-      statistics={true}
-      carousel={true}
+      <Header
+        title='Specialists in health, social care, education, pharma'
+        subheading='Connell Consulting'
+        paragraphs={[
+          'Connell Consulting offer private equity firms and corporate clients detailed market knowledge combined with commercial insight. Our commercial due diligence and strategic reports provide granular and comprehensive analysis. Our reports are based upon fresh and targeted primary research, plus comprehensive interviews with commissioners and other stakeholders at both local and national levels.',
+          'Produced commercial due diligence reports on over £7 billion of health and social care transactions in the last year',
+        ]}
+        highlight={true}
+        imageplural={false}
+        img={HeaderImg}
+        statistics={true}
+        carousel={true}
       />
 
-      <img src={BannerImg} width="100%" className='banner_1_img container-custom'/>
-      <h2 className='title-medium text container-custom' style={{marginTop: "30px"}}><strong>We offer detailed market knowledge combined with commercial insight</strong></h2>
-      <p className='banner_p container-custom'>Connell Consulting is a leading commercial due diligence specialist for private equity firms and corporate clients. Our reports are based upon fresh and targeted primary research, plus comprehensive interviews with commissioners and other stakeholders at both local and national levels.</p>
+      <img
+        src={BannerImg}
+        width='100%'
+        className='banner_1_img container-custom'
+      />
+      <h2
+        className='title-medium text container-custom'
+        style={{ marginTop: '30px' }}
+      >
+        <strong>
+          We offer detailed market knowledge combined with commercial insight
+        </strong>
+      </h2>
+      <p className='banner_p container-custom'>
+        Connell Consulting is a leading commercial due diligence specialist for
+        private equity firms and corporate clients. Our reports are based upon
+        fresh and targeted primary research, plus comprehensive interviews with
+        commissioners and other stakeholders at both local and national levels.
+      </p>
       <Row className='due-dilligence-banner container-custom padding-block'>
-        <Col sm={11} md={11} className="text">Produced commercial due diligence reports on over <strong>£7 billion</strong>  of health and social care transactions in the last year</Col>
-        <Col sm={12} md={13} className="numbers">
+        <Col sm={11} md={11} className='text'>
+          Produced commercial due diligence reports on over{' '}
+          <strong>£7 billion</strong> of health and social care transactions in
+          the last year
+        </Col>
+        <Col sm={12} md={13} className='numbers'>
           <div>
-            <span><CountUp start={480} end={500}  duration={1}/></span>
+            <span>
+              <CountUp start={480} end={500} duration={1} />
+            </span>
             <span>Engagments</span>
           </div>
           <div>
-            <span><CountUp start={70} end={84} suffix="%" duration={1.2} /></span>
+            <span>
+              <CountUp start={70} end={84} suffix='%' duration={1.2} />
+            </span>
             <span>Repeat business</span>
           </div>
           <div>
-            <span><CountUp start={0} end={7} suffix="bn" duration={1.2} /></span>
+            <span>
+              <CountUp start={0} end={7} suffix='bn' duration={1.2} />
+            </span>
             <span>Transactions</span>
           </div>
-
         </Col>
-
       </Row>
-      
+
       <Services />
 
-      <h2 className="title-medium"><span className="highlight-text">Our</span> Clients </h2>
+      <h2 className='title-medium'>
+        <span className='highlight-text'>Our</span> Clients{' '}
+      </h2>
 
       <Carousel className='home-carousel' autoplay dots={false}>
         <Row>
-          <img alt="" src={BannerImg1} width="100%" />
-        </Row> 
+          <img alt='' src={BannerImg1} width='100%' />
+        </Row>
         <Row>
-        <img alt="" src={BannerImg2} width="100%"/>
-        </Row> 
+          <img alt='' src={BannerImg2} width='100%' />
+        </Row>
         <Row>
-        <img alt="" src={BannerImg3} width="100%"/>
-        </Row> 
+          <img alt='' src={BannerImg3} width='100%' />
+        </Row>
       </Carousel>
 
-   
       <News />
 
-      <Banner bg="#B4C7E760" customClass="c-alice-carousel"/>
-    
-      <Awards /> 
+      <Banner bg='#B4C7E760' customClass='c-alice-carousel' />
 
-      <Row className='team-grid container-custom' gutter={[20,30]}>
-        <Col sm={24} md={9} lg={9}> 
+      <Awards />
+
+      <Row className='team-grid container-custom' gutter={[20, 30]}>
+        <Col sm={24} md={9} lg={9}>
           <h1>
-          Specialists in health, social care, education, pharma, vets and students accommadation
-          </h1> 
-          <p className='text-regular'>Connell Consulting’s success is based on the wealth of experience of our people. We have a team of professionals with expertise across a wide variety of sectors, deal sizes, and transaction types.</p>
-          <Link to="team">
-            <button>Meet our experts <img alt="" src={Arrow} style={{"marginBottom": "3px"}} /></button>
-          </Link>  
+            Specialists in health, social care, education, pharma, vets and
+            students accommadation
+          </h1>
+          <p className='text-regular'>
+            Connell Consulting’s success is based on the wealth of experience of
+            our people. We have a team of professionals with expertise across a
+            wide variety of sectors, deal sizes, and transaction types.
+          </p>
+          <Link to='team'>
+            <button>
+              Meet our experts{' '}
+              <img alt='' src={Arrow} style={{ marginBottom: '3px' }} />
+            </button>
+          </Link>
         </Col>
-        <Col sm={24} md={15} lg={15} className="team-grid-img"> 
-          {team && team.map((member, i) => {
-            return <img src={Object.values(member.image)[0]} alt="" width="120px" key={i} effect="blur"/>
-          })}
+        <Col sm={24} md={15} lg={15} className='team-grid-img'>
+          {team &&
+            team.map((member, i) => {
+              return (
+                <img
+                  src={Object.values(member.image)[0]}
+                  alt=''
+                  width='120px'
+                  key={i}
+                  effect='blur'
+                />
+              )
+            })}
         </Col>
       </Row>
     </div>
