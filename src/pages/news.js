@@ -81,7 +81,7 @@ function News() {
       </nav>
 
       <Row
-        gutter={[20, 60]}
+        gutter={[{xs:20, sm:40, md:60, lg:120}, 60]}
         className="transactions news-card-bg-transparent  container-custom"
       >
         {loading ? (
@@ -112,6 +112,7 @@ function News() {
               let {data} = n 
              let str = data.blog_title.toLowerCase().split(" ").join("-")
              str = str.substring(0, 50);
+             console.log("first", n.id)
               if (data.blog_status === 'active') {
                   return (
                   <Col xs={12} md={8} key={i}>

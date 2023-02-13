@@ -10,6 +10,7 @@ import Img1 from '../assets/images/Clare-Goncalo-and-team-scaled 18.jpg'
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import {db} from '../firebase.js'
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 
 function News() {
   const [news, setNews] = useState([])
@@ -35,7 +36,7 @@ function News() {
       
      <Row gutter={[20, 30]} className="mbottom-80">
        <Col lg={12} md={12} sm={24}>
-          
+       <Link to={`//${news[0]?.data.blog_permalink}`} target="_blank">
           <LazyLoadImage title={news[0]?.data?.imgArr[0]?.blog_image_name} alt={news[0]?.data?.imgArr[0]?.blog_image_name} src={news[0]?.data?.imgArr[0]?.blog_image} width="100%" effect="blur" style={{"maxHeight": "383px", "objectFit": "cover"}}/>
 
           <div className="recent-news">
@@ -43,26 +44,35 @@ function News() {
               <h2 className="title-regular text-start text-elipse text-elipse-two-lines" style={{"marginBottom": "10px"}}>{news[0]?.data?.blog_title}</h2>
               <div className="text-regular text-elipse">{news[0]?.data?.blog_body && parse(news[0].data.blog_body)}</div>
           </div>
+        </Link>
         </Col>
         <Col lg={12} md={12} sm={24} style={{"display":"flex", "flexWrap":"wrap"}}>
-
             <div className="news-grid-small">
+              <Link to={`//${news[1]?.data.blog_permalink}`} target="_blank">
                 <div className="news-card">
                     <p className="header text-elipse text-elipse-small">{news[1]?.data?.blog_title}</p>
                     <button className="read-more-btn"> Read more </button>
                 </div>
+              </Link>
+              <Link to={`//${news[2]?.data.blog_permalink}`} target="_blank">
                 <div className="news-card">
                     <p className="header text-elipse text-elipse-small">{news[2]?.data?.blog_title}</p>
                     <button className="read-more-btn"> Read more </button>
                 </div>
+              </Link>
+              <Link to={`//${news[3]?.data.blog_permalink}`} target="_blank">
                 <div className="news-card">
                     <p className="header text-elipse text-elipse-small">{news[3]?.data?.blog_title}</p>
                     <button className="read-more-btn"> Read more </button>
                 </div>
+              </Link>
+              <Link to={`//${news[4]?.data.blog_permalink}`} target="_blank">
                 <div className="news-card">
                     <p className="header text-elipse text-elipse-small">{news[4]?.data?.blog_title}</p>
                     <button className="read-more-btn"> Read more </button>
                 </div>
+              </Link>
+               
 
                      
                 

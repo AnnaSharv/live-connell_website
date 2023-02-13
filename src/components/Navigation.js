@@ -21,7 +21,7 @@ function Navigation() {
   const [routeName, setRouteName] = useState("Home")
   const [activeRouteName, setActiveRouteName] = useState(routeName)
   const {userStatus, setUserStatus} = useContext(Authcontext)
-  
+  const [expanded, setExpanded] = useState(false);
   useEffect(() => {
     switch (true) {
       
@@ -60,16 +60,18 @@ function Navigation() {
         break;
     }
     
-   
+    // document.querySelector('.nav-top').classList.remove('show')
+    setExpanded(false)
   }, [location.pathname])
 
 
- 
+  const handleToggle = () => setExpanded(!expanded);
+
 
   return (
     <div className='navigations'>
 
-    <Navbar expand="lg" className='nav-up container-custom'>
+    <Navbar expand="lg" className='nav-up container-custom' onToggle={handleToggle} expanded={expanded} >
         <Navbar.Brand href="/clare"><img src={Logo} width="232" height="100" alt="Connell_consulting" className='logo' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className='nav nav-top' >

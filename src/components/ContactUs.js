@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
 import * as Yup from "yup";
 
 
@@ -28,8 +27,9 @@ function ContactUs() {
   })
  
   let handleSubmit = (values, actions) => {
-    emailjs.sendForm("service_mp47gja", "template_c0i9fcl", form.current, "oB8hfodng-2Fj2iGe")
+    emailjs.sendForm("service_8b6nu6d", "template_2l5kmnf", form.current, "nwra_4xN5EhCrUoEH")
     .then((result) => {
+      console.log(result)
       setAlertInfo({
         show: true,
         variant:"success",
@@ -38,7 +38,7 @@ function ContactUs() {
       setTimeout(() => {
         setAlertInfo({...alertInfo, show:false})
       }, 4000);
-      actions.resetForm()
+      formik.resetForm()
     },
     (error) => {
       setAlertInfo({
@@ -50,10 +50,6 @@ function ContactUs() {
       setTimeout(() => {
         setAlertInfo({...alertInfo, show: false})
       }, 4000);
-
-
-      console.log("error", error)
-      actions.resetForm()
     });
   }
 
@@ -64,11 +60,11 @@ function ContactUs() {
       email: "",
       phone: "",
       message: "",
-      suggestion: "Please let us know where you found us"
+      suggestion: null
     },
     validationSchema: SendLetterSchema,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
       handleSubmit(values)
     },
   });
@@ -77,7 +73,7 @@ function ContactUs() {
       {alertInfo.show && (
         <Alert variant={alertInfo.variant} text={alertInfo.text} />
       )}
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} ref={form}>
         <Row gutter={[20, 10]}>
           <Col span={12}>
             <Input
@@ -148,31 +144,17 @@ function ContactUs() {
             ) : null}
           </Col>
           <Col span={24}>
-            <Select
-             id="suggestion"
-              size="large"
-              placeholder="Please let us know where you found us"
-              style={{ width: "100%" }}
-              //onChange={handleChange}
-              options={[
-                {
-                  value: "option one",
-                  label: "option one",
-                },
-                {
-                  value: "option two",
-                  label: "option two",
-                },
-                {
-                  value: "option three",
-                  label: "option three",
-                },
-              ]}
-              {...formik.getFieldProps("suggestion")}
-            />
-                {formik.touched.suggestion && formik.errors.suggestion ? (
-              <div>{formik.errors.suggestion}</div>
-            ) : null}
+            <Input
+                size="large"
+                placeholder="Where did you find us?"
+                id="suggestion"
+                type="text"
+                {...formik.getFieldProps("suggestion")}
+              />
+              {formik.touched.suggestion && formik.errors.suggestion ? (
+                <div>{formik.errors.suggestion}</div>
+              ) : null}
+
           </Col>
 
           <Col span={24}>

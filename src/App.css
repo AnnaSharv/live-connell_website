@@ -524,7 +524,6 @@ ul {
   line-height: 30.49px;
   font-family: 'MonserratBold';
   margin-top: 50px;
-  margin-bottom: 30px;
 }
 .read-more-btn {
   background: none;
@@ -1392,6 +1391,11 @@ footer {
   .single-news img {
     max-width: 100%;
   }
+  .single-news .title {
+    font-size: 18px;
+    line-height: 21px !important;
+    max-width: 100%;
+  }
   .img-role {
     height: 357px !important;
   }
@@ -1759,7 +1763,7 @@ footer {
   background: transparent;
   box-shadow: none;
   padding: 0;
-  max-width: 290px;
+  /* max-width: 290px; */
 }
 .news-card-bg-transparent .ant-card img {
   margin: 0;

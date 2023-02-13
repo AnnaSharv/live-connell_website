@@ -19426,16 +19426,17 @@ function App() {
   const Wrapper = ({children}) => {
     const location = useLocation();
     useLayoutEffect(() => {
-      if(!location.pathname.includes("news") 
-          || !location.pathname.includes("transactions") 
-          || !location.pathname.includes("news") 
-          || !location.pathname.includes("careers")
-          || !location.pathname.includes("policy")
-          || !location.pathname.includes("cookies")
-          || !location.pathname.includes("terms_and_conditions"))
+      if(location.pathname.includes("news") 
+          || location.pathname.includes("transactions") 
+          || location.pathname.includes("news") )
       {
+       return 
+      } else {
         document.documentElement.scrollTo(0, 0);
       }
+
+
+      console.log("ff",location.pathname)
         
     }, [location.pathname]);
     
@@ -19467,7 +19468,7 @@ function App() {
             <Navigation />
             <Routes>
               <Route path="/clare/" element={<Home />} />
-              <Route path="/" element={<Home />} />
+              <Route path="*" element={<Home />} />
               <Route path="/clare/login" element={<Login />} />
               <Route path="/clare/dashboard" element={
                 <RequiresAuth>
