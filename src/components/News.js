@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {Col, Row} from 'antd'
 
-import {transactions} from '../data/transactions.js'
-
 import parse from 'html-react-parser';
-import Img1 from '../assets/images/Clare-Goncalo-and-team-scaled 18.jpg'
+import Img1 from '../assets/images/home/Clare-Goncalo-and-team-scaled 18.jpg'
+import Img2 from '../assets/images/home/Clare-Goncalo-and-team-scaled 30.jpg'
 
 
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
@@ -37,7 +36,12 @@ function News() {
      <Row gutter={[20, 30]} className="mbottom-80">
        <Col lg={12} md={12} sm={24}>
        <Link to={`//${news[0]?.data.blog_permalink}`} target="_blank">
-          <LazyLoadImage title={news[0]?.data?.imgArr[0]?.blog_image_name} alt={news[0]?.data?.imgArr[0]?.blog_image_name} src={news[0]?.data?.imgArr[0]?.blog_image} width="100%" effect="blur" style={{"maxHeight": "383px", "objectFit": "cover"}}/>
+          <LazyLoadImage title={news[0]?.data?.imgArr[0]?.blog_image_name} alt={news[0]?.data?.imgArr[0]?.blog_image_name} 
+          // src={Img1}
+          src={news[0]?.data?.imgArr[0]?.blog_image} 
+          width="100%" effect="blur" 
+          style={{"maxHeight": "383px", "objectFit": "cover"}}
+          />
 
           <div className="recent-news">
               <h6 className="sup">{news[0]?.data?.blog_date}</h6>
@@ -77,7 +81,7 @@ function News() {
                      
                 
               <div className="news-img">
-                  <img alt="" src={Img1}/>
+                  <img alt="" src={Img2}/>
                   <p className="p-light">Vendor CDD for the sale of Sequence Care Group to Intriva Capital</p>
                 </div>
             </div>

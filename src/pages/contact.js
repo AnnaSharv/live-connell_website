@@ -1,10 +1,13 @@
 import React from "react";
-
-
-import Map from "../assets/images/Map.png";
 import Header from "../components/Header.js";
 import {Row, Col} from 'antd'
 import ContactUs from "../components/ContactUs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+import Img from '../assets/images/banners/news.png'
+import Map from "../assets/images/contact/Map.png";
+import Img1 from "../assets/images/contact/Clare-Goncalo-and-team-scaled 30.jpg";
+
 
 
 function Contact() {
@@ -15,6 +18,7 @@ function Contact() {
         title="Contact Us"
         padding="0px"
         myClass="noclass"
+        image={Img}
       />
 
       <Row className=" container-custom">
@@ -42,12 +46,10 @@ function Contact() {
             href="https://www.google.com/maps/place/Connell+Consulting/@51.4989905,-0.1410449,17z/data=!3m1!4b1!4m5!3m4!1s0x48760f9cea74d1f3:0x11d65f6fe4a14b60!8m2!3d51.4989956!4d-0.1410673"
             target="_blank"
           >
-            <img src={Map} alt="our_location" className="location" />
+            <LazyLoadImage effect="blur" src={Map}  height="100%" alt="our_location" className="location" />
           </a>
         </Col>
       </Row>
-
-      {/* AIzaSyAqpbEOjSF7oDGaVvio9t5dDMEhM2cQqX8 */}
 
       <Row className="contact-form mblock-80 container-custom" gutter={[20,30]}>
         <Col sm={24} md={12}>
@@ -55,7 +57,7 @@ function Contact() {
           <ContactUs />
         </Col>
         <Col sm={24} md={12}>
-          <img src="https://www.connell-consulting.com/wp-content/uploads/2022/05/Full-Team-A-Hi-Res-scaled.jpg" alt="" width="100%" 
+          <LazyLoadImage effect="blur"  height="100%" src={Img1} alt="" width="100%" 
             style={{
               "borderRadius":"10px",
               "height":"100%",

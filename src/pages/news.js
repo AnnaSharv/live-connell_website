@@ -10,6 +10,8 @@ import { collection, getDocs, query, orderBy, where, limit } from "firebase/fire
 import {db} from '../firebase.js'
 
 import NoImage from '../assets/images/noimage.jpg'
+import Img from '../assets/images/banners/news.png'
+
 
 function News() {
   const location = useLocation()
@@ -46,7 +48,7 @@ function News() {
 
   return (
     <div className="news">
-      <Header title={"Our latest news"} subheading={"News"} />
+      <Header title={"Our latest news"} subheading={"News"} image={Img} />
       <nav
         className="nav-right mbottom-80 container-custom"
         style={{ width: "fit-content", gridGap: "30px" }}

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Modal as MyModal, Row, Col} from 'antd';
 import { useState } from 'react';
 
@@ -33,7 +35,7 @@ const Modal = ({memberImg, memberName, memberDescription, memberMail, memberPosi
                 <div className='text-regular text-regular-bold'>{parse(memberDescription)}</div>
               
                 {
-                    memberMail && <p className='mt-4 text-regular text-regular-bold'> <img src={Mail} alt="" width="22px" /> {memberMail} </p>
+                  memberMail && <p className='mt-4 text-regular text-regular-bold'> <img src={Mail} alt="" width="22px" /> {memberMail} </p>
                 }
             </Col>
         </Row>

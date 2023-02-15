@@ -2,9 +2,12 @@ import React from "react";
 import { Link} from "react-router-dom";
 import {Row, Col, List} from 'antd'
 
-import Img1 from "../assets/images/_news_1.jpg";
+import Img from '../assets/images/banners/careers.png'
+import Img1 from "../assets/images/careers/full-width-img.jpg";
+
 
 import Header from "../components/Header.js";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function careers() {
   const data = [
@@ -34,6 +37,7 @@ function careers() {
           "Connell Consulting has a highly skilled team of Analysts and Consultants with a wealth of experience across the health, social care and education sectors. As a market leading company that offers our clients detailed sector knowledge combined with commercial insight, we work with leading investors, banks, and operators on new and exciting opportunities.",
           "We are interested in receiving applications from smart and driven candidates who are seeking to support the delivery of commercial due diligence and strategic reports for clients across the health, social care and education sectors.",
         ]}
+        image={Img}
       
       />
 
@@ -56,7 +60,8 @@ function careers() {
 
 
 <div className="container-custom mbottom-80 ">
-   <img
+   <LazyLoadImage
+        effect="blur"
         src={Img1}
         alt=""
         width="100%"

@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import {Row, Col, Spin, Empty} from 'antd'
+import {Row, Col, Spin } from 'antd'
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import {db} from '../firebase.js'
 
-// import { transactionsAll } from "../data/tabsTransactions";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function TabsCustom() {
-  const location = useLocation();
   const param = useParams();
   const [routeName, setRouteName] = useState("all");
   const [transactions, setTransactions] = useState([])
@@ -47,7 +45,6 @@ function TabsCustom() {
     "nav nav-bottom navbar-collapse collapse show"
 
     let dropdown = document.querySelector(".chosen-year-menu .nav")
-    console.log(dropdown.classList.contains("show"))
     dropdown.classList.contains("show") && dropdown.classList.remove("show")
   })
     
@@ -57,7 +54,6 @@ function TabsCustom() {
   
   useEffect(() => {
     setRouteName(Object.values(param)[0]);
-    //console.log(document.querySelector(".transactions-image-container").children.length)
   }, [param]);
 
   return (

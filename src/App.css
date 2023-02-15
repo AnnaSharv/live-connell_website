@@ -31,10 +31,7 @@
 button:disabled {
   cursor: not-allowed;
 }
-/* .my-carousel .slick-track {
-  display: flex !important;
-  gap:20px !important;
-} */
+
 input,
 select,
 textarea,
@@ -155,20 +152,7 @@ a {
 .padding-block {
   padding-block: 60px !important;
 }
-/* .imageText > div:nth-child(1) {
-  order: 2;
-}
-
-.imageText > div:nth-child(2) img {
-  order: 1;
-  position: relative;
-  width: 90%;
-  border-radius: 10px;
-} */
-/* lines */
-
 /* Navigation */
-
 /* end border */
 .active-link,
 .active-link * {
@@ -268,7 +252,7 @@ ul {
 /* header */
 .gradient-image {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   grid-gap: 20px;
   /* background-image: linear-gradient( 60deg, rgba(0, 0, 0, 0.0), rgba(29, 70, 150, 0.6));  HEADER.JS!!!*/
   position: relative;
@@ -283,7 +267,7 @@ ul {
   display: grid;
 }
 .gradient-image img:nth-child(1) {
-  align-self: end;
+  align-self: flex-end;
 }
 .home-carousel .slick-list {
   height: auto;
@@ -316,8 +300,6 @@ ul {
   background-color: var(--blue);
 }
 .langing-page-header {
-  /* grid-row-gap: 50px; */
-  /* padding: 60px 0 140px; */
   position: relative;
   padding-bottom: 90px;
   background: #eaeef7;
@@ -332,14 +314,7 @@ ul {
   justify-content: center;
   background-color: var(--bluebanner);
 }
-/* .langing-page-header div:nth-child(2) {
-    height: 100%;
-    right: 0px;
-} */
-/* .image {
-  position: absolute;
-  right: -15px;
-} */
+
 .subheading {
   margin-bottom: 10px;
   font-size: 14px;
@@ -631,11 +606,6 @@ ul {
 }
 
 /* awards */
-
-/* .awards-list > div {
-  grid-row-gap: 20px;
-} */
-
 .award-card img {
   width: 220px;
   height: 147px;
@@ -748,9 +718,6 @@ footer {
   font-size: 16px;
   font-family: MonserratMedium;
 }
-/* .services-container .paragraphs {
-  margin-block: 80px 110px; 
-} */
 .text-decor {
   position: relative;
   padding-left: 25px !important;
@@ -784,10 +751,7 @@ footer {
 }
 
 /* sectors */
-/* .sectors-container {
-  position: relative;
-  padding: 80px 0 180px;
-} */
+
 .sector-card span {
   position: relative;
   display: block;
@@ -806,7 +770,7 @@ footer {
   position: absolute;
   display: block;
   width: 100%;
-  height: 100%;
+  height: 99%;
   background-color: var(--blue);
   z-index: 1;
   opacity: 0.4;
@@ -925,37 +889,11 @@ footer {
   font-family: 'MonserratMedium';
   line-height: 14.63px;
 }
-/* .recent-transactions img {
-  width: 90%;
-  border-radius: 10px;
-} */
-
 /* clients */
 .clients_image {
   width: 100%;
   height: 100%;
 }
-/* .clients_image_array {
-  margin-bottom: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-} */
-/* .clients_image_card {
-  padding: 28px;
-} */
-/* .clients_image_card:last-child {
-  position: relative;
-}
-.clients_image_card:last-child::before {
-  content: "";
-  display: flex;
-  background: white;
-  width: 308%;
-  height: 101%;
-  position: absolute;
-  top: 0;
-  left: 101%;
-} */
 
 /* team */
 
@@ -1107,20 +1045,11 @@ footer {
 }
 
 /* responsive */
-@media only screen and (min-width: 1500px) {
-  /* .App {
-    max-width: 1340px;
-  } */
-}
+
 @media only screen and (min-width: 768.5px) and (max-width: 1320px) {
   .image-with-box-shadow {
     width: 100%;
   }
-  /* .image {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  } */
   .award-card {
     flex-wrap: wrap;
   }
@@ -1146,6 +1075,10 @@ footer {
   }
 }
 @media only screen and (max-width: 769px) {
+  .sector-cards-img {
+    aspect-ratio: 2.5/1;
+    object-position: center;
+  }
   .team-grid-img img {
     height: fit-content !important;
   }
@@ -1189,11 +1122,7 @@ footer {
     padding: 0;
     min-height: 280px;
   }
-  /* .image {
-    position: relative;
-    width: 100%;
-    right: 0;
-  } */
+
 
   .langing-page-header .title {
     font-size: 32px;
@@ -1215,26 +1144,7 @@ footer {
   .statistics .numbers {
     font-size: 24px;
   }
-  /* .banner {
-    display: grid !important;
-    grid-row-gap: 30px;
-    padding: 30px 0;
-  }
-  .banner-text::after {
-    display: none;
-  }
- 
 
-  .banner-text p:nth-child(2) {
-    font-size: 14px;
-  }
-  .OurServicesShort {
-    margin: 60px 0 0 0;
-  }
-
-  .banner-static {
-    margin-top: 20px;
-  } */
   .transactions {
     margin-top: 60px;
   }
@@ -1322,12 +1232,6 @@ footer {
   }
 
   /* sectors */
-
-  /* .sectors-container {
-    padding: 30px 18px 120px;
-    grid-gap: 30px;
-    grid-template-columns: 1fr;
-  } */
   .sector-card {
     grid-template-rows: auto;
     grid-row-gap: 20px;
@@ -1436,10 +1340,6 @@ footer {
   }
   .text-decor {
     padding-left: 10px !important ;
-    /* padding: 0 !IMPORTANT; */
-    /* margin: -20px 0 32px; */
-    /* margin: 0; */
-    /* padding:0 !important; */
   }
   .image-with-box-shadow {
     box-shadow: none;
@@ -1452,10 +1352,6 @@ footer {
   .services-container .full-width-img {
     height: 156px;
   }
-  /* .clients_image_array {
-    grid-template-columns: 1fr 1fr;
-  } */
-
   .team_member_img {
     min-height: auto;
     height: 262px;
@@ -1527,7 +1423,7 @@ footer {
 
 /* team home */
 .team-grid {
-  justify-content: end;
+  justify-content: flex-end;
   margin-bottom: 80px;
 }
 .team-grid h1 {
@@ -1559,7 +1455,7 @@ footer {
 .team-grid-img {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 20px 13px;
   width: 100%;
 }
@@ -1763,7 +1659,7 @@ footer {
   background: transparent;
   box-shadow: none;
   padding: 0;
-  /* max-width: 290px; */
+  max-width: 290px;
 }
 .news-card-bg-transparent .ant-card img {
   margin: 0;
@@ -1855,5 +1751,31 @@ footer {
   .my-carousel .slick-dots {
     justify-content: center !important;
     padding: 0 !important;
+  }
+}
+
+
+/* carousel and banner image responsive */
+@media only screen and (max-width: 767px) {
+  .my-carousel-image {
+    height: 231px !important;
+  }
+  .my-carousel {
+    height: 600px;
+  }
+}
+@media only screen and (max-width: 616px) {
+  .my-carousel .slick-dots {
+    bottom: -15px
+  }
+}
+@media only screen and (max-width: 454px) {
+  .my-carousel .slick-dots {
+    bottom: -30px
+  }
+}
+@media only screen and (min-width:768px) and (max-width: 1228px) {
+  .gradient-image-banner img {
+    height: 100%;
   }
 }

@@ -7,8 +7,10 @@ import {Row, Col} from 'antd'
 import  Transactions  from "../components/Transactions";
 
 //images
-import img1 from '../assets/images/Saiyna-George-Charlotte-Lilya_WEB-RES_009 2-2.jpg'
-import img2 from '../assets/images/_services_1.jpg'
+import img1 from '../assets/images/banners/service.png'
+import img2 from '../assets/images/services/team_1.jpg'
+import img3 from '../assets/images/services/Team_hi-res_015.jpg'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Services() {
   return (
@@ -21,7 +23,7 @@ function Services() {
           "As a team we have developed tried and tested methodologies that deliver real competitive value. We use our accumulated knowledge to hit the ground running with no need to spend your valuable time familiarising ourselves with the landscape. We are able to rapidly see the bigger picture and position your business within the market.",
         ]}
         padding={"90px"}
-        imageplural={[img1, img1]}
+        image={img1}
         myClass={"smaller-padding-header"}
       />
 
@@ -35,9 +37,9 @@ function Services() {
       </Row>
 
 
-      <Row gutter={[20,30]} className="container-custom">
+      <Row gutter={[90,30]} className="container-custom">
         <Col sm={24} md={12}>
-          <img src={img2} alt="" className="image-with-box-shadow"/>
+          <LazyLoadImage effect="blur" src={img2} alt="" className="image-with-box-shadow" width={'95%'}/>
         </Col>
         <Col sm={24} md={12}>
         <h2 className="title-medium text-start">Commercial Due Diligence</h2>
@@ -65,12 +67,12 @@ function Services() {
             </p>
         
 
-          <Link to="/clare/transactions/all"><button className="button-solid mt-5" >SEE ALL THE RECENT TRANSACTIONS</button></Link>
+          <Link to="/transactions/all"><button className="button-solid mt-5" >SEE ALL THE RECENT TRANSACTIONS</button></Link>
         </section>
         </Col>
       </Row>
     
-      <img src="https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg" alt="" className="full-width-img mblock-109"/>
+      <LazyLoadImage effect="blur" src={img3} alt="" className="full-width-img mblock-109" width={'100vw'}/>
 
      
       <h2 className="title-medium text-start container-custom">Strategy</h2>

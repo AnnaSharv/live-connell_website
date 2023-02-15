@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 
-import {Row, Col, Input, Select} from 'antd'
+import {Row, Col, Input } from 'antd'
 
 import Alert from '../components/Alert'
 const { TextArea } = Input;
@@ -60,7 +60,7 @@ function ContactUs() {
       email: "",
       phone: "",
       message: "",
-      suggestion: null
+      suggestion: ""
     },
     validationSchema: SendLetterSchema,
     onSubmit: values => {

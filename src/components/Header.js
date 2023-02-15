@@ -1,3 +1,4 @@
+import React from 'react'
 import {useState, useEffect} from 'react'
 import { Col, Row,  Button, Spin } from 'antd';
 import {Carousel as Mycarousel} from 'antd'
@@ -5,7 +6,7 @@ import Arrow from '../assets/images/arrow.svg'
 import {Link} from 'react-router-dom'
 import parse from 'html-react-parser';
 
-import { collection, getDocs, query, orderBy, where, limit } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import {db} from '../firebase.js'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -16,7 +17,7 @@ const contentStyle = {
   textAlign: 'center',
   background: '#364d79',
 };
-function Header({carousel, subheading, title, backGroundImageSrc, paragraphs, highlight, img, statistics, imageplural, padding, myClass}) {
+function Header({carousel, subheading, title, padding, myClass, image}) {
   const [sliders, setSliders] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -46,12 +47,12 @@ function Header({carousel, subheading, title, backGroundImageSrc, paragraphs, hi
           <h1 className="title m-0">{title}</h1>
         </Col>
          <Col sm={24}  md={12} className="gradient-image-banner"> 
-            <img src={"https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg"} alt="" width="100%" height="280px"/>
+            <img src={image || "https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg"} alt="" width="100%" height="280px"/>
          </Col>
          {/* <Col md={6} sm={12} className="gradient-image" style={{"backgroundImage": "linear-gradient( 60deg, rgba(0, 0, 0, 0.0), rgba(29, 70, 150, 0.6)), url(https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg)"}}></Col> */}
       </Row> 
       : 
-        <Mycarousel className='my-carousel' >
+        <Mycarousel className='my-carousel'>
           {
             sliders.length > 0 ?
               sliders.map((slider,i) => {
@@ -71,7 +72,7 @@ function Header({carousel, subheading, title, backGroundImageSrc, paragraphs, hi
                       {slider.data.slider_subheading && (
                         <h6 className="subheading">{slider.data.slider_subheading}</h6>
                       )}
-                      <h1 className="title text-elipse">{slider.data.slider_description && parse(slider.data.slider_description) }</h1>
+                      <div className="title text-elipse ms-0" >{slider.data.slider_description && parse(slider.data.slider_description) }</div>
 
                       {
                         slider.data.slider_button !== 'Select button' &&
@@ -85,11 +86,12 @@ function Header({carousel, subheading, title, backGroundImageSrc, paragraphs, hi
                     </Col>
                     <Col sm={24} md={12} className="gradient-image-banner">
                       <LazyLoadImage
+                        className='my-carousel-image'
                         src={slider.data.slider_image}
                         alt="carousel-image"
                         width="100%"
                         height="100%"
-                        style={{ maxHeight: "437px", zIndex: "1" }}
+                        style={{ height: "437px", zIndex: "1" }}
                         effect="blur"
                       />
                     </Col>

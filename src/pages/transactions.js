@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../components/Header";
 import TabsCustom from "../components/Tabs";
 
-import Image from "../../src/assets/images/Patrick-Alex-Cheran_WEB-RES_012.jpg";
+import Img from '../assets/images/banners/transactions.png'
 
 function Transactions() {
   
@@ -12,7 +12,7 @@ function Transactions() {
       <Header
         subheading={"Recent transactions"}
         title={"Connell Consulting has worked on a large volume of transactions in the health, social care and special education space."}
-        img={Image}
+        image={Img}
         myClass={"recent-transactions banner-title-long"}
       />
       <div className="tabsContent container-custom">

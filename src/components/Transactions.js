@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Card, Empty} from 'antd'
+import {Card} from 'antd'
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -61,8 +61,6 @@ function Transactions(props) {
     }
     getData() 
 
-
-    console.log(transactions)
   }, [])
 
   return (
@@ -70,43 +68,20 @@ function Transactions(props) {
         <h2 className="title-medium mbottom-30 container-custom"> Recent Transactions  </h2>
 
         <Slider {...settings} className={props.modal ? "container-custom pr-custom" : "container-custom pr-custom"}>
-        {/* <Card bordered={false} 
-            title="Year 2022"
-            hoverable
-            cover={<img alt="example" src="https://www.connell-consulting.com/wp-content/uploads/2023/01/Tombstone-Investor-CDD-of-Amesbury-by-Learn-to-live-3.png" />
-           }>
-              <p className="text-regular text-elipse text-elipse-small">We specialise in delivering insightful primary market research incorporating competitor intelligence, funding and regulatory outlook, stakeholder interviews and supply/demand dynamics.</p>
-          </Card>
-          <Card bordered={false} 
-            title="Year 2022"
-            hoverable
-            cover={<img alt="example" src="https://www.connell-consulting.com/wp-content/uploads/2023/01/Tombstone-Investor-CDD-of-Amesbury-by-Learn-to-live-3.png" />
-           }>
-              <p className="text-regular text-elipse text-elipse-small">We specialise in delivering insightful primary market research incorporating competitor intelligence, funding and regulatory outlook, stakeholder interviews and supply/demand dynamics.</p>
-          </Card>
-          <Card bordered={false} 
-            title="Year 2022"
-            hoverable
-            cover={<img alt="example" src="https://www.connell-consulting.com/wp-content/uploads/2023/01/Tombstone-Investor-CDD-of-Amesbury-by-Learn-to-live-3.png" />
-           }>
-              <p className="text-regular text-elipse text-elipse-small">We specialise in delivering insightful primary market research incorporating competitor intelligence, funding and regulatory outlook, stakeholder interviews and supply/demand dynamics.</p>
-          </Card>
-      */}
-
-     {
-      transactions.length > 0 && 
-        transactions.map((transaction,i) => {
-           if(transaction.data.transactions_status === "active") {
-            return (
-              <Card key={i} bordered={false} title={`Year ${transaction.data.transactions_year}`} hoverable cover={<LazyLoadImage title={transaction.data.transactions_title} alt={transaction.data.transactions_title} src={transaction.data.transactions_image} effect="blur"/>}>
-                  <p className="text-regular text-elipse text-elipse-small">{transaction.data.transactions_title}</p>
-              </Card>
-            )
-           }
-          
-        })
-     
-     }
+        {
+          transactions.length > 0 && 
+            transactions.map((transaction,i) => {
+              if(transaction.data.transactions_status === "active") {
+                return (
+                  <Card key={i} bordered={false} title={`Year ${transaction.data.transactions_year}`} hoverable cover={<LazyLoadImage title={transaction.data.transactions_title} alt={transaction.data.transactions_title} src={transaction.data.transactions_image} effect="blur"/>}>
+                      <p className="text-regular text-elipse text-elipse-small">{transaction.data.transactions_title}</p>
+                  </Card>
+                )
+              }
+              
+            })
+        
+        }
         </Slider>
 
     </div>

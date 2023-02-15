@@ -6,7 +6,7 @@ import {db} from '../firebase.js'
 import Header from "../components/Header.js";
 // import { team } from "../data/team.js";
 
-import Image from "../../src/assets/images/Full-Team-A-Hi-Res-scaled.jpg";
+import Img from '../assets/images/banners/team.png'
 import Modal from '../components/Modal'
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -38,7 +38,7 @@ function Team() {
       <Header
         subheading={"Team"}
         title={ "The team"}
-        img={Image}
+        image={Img}
       
       />
 
@@ -49,8 +49,8 @@ function Team() {
      
 
       <Row className="team_image_container gx-5 container-custom" gutter={[20, 60]}>
-        {team?.map((teamMember) => {
-          if(teamMember.data.member_name.includes("Clare Connell") || teamMember.data.member_name.includes("Gonçalo Silva")) {
+        {/* {team && team.map((teamMember) => {
+          if(teamMember.data?.member_name?.includes("Clare Connell") || teamMember.data?.member_name?.includes("Gonçalo Silva")) {
             return (
               <Col key={teamMember.id} className="member_card" xs={12} sm={12} md={6}>
               <div className="member_img"> 
@@ -71,7 +71,7 @@ function Team() {
             </Col>
             )
            }
-        })}
+        })} */}
         {team?.map((teamMember) => {         
          if(teamMember.data.member_status === 'active' && !teamMember.data.member_name.includes("Clare Connell") && !teamMember.data.member_name.includes("Gonçalo Silva")) {
            return (

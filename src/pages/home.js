@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import Header from '../components/Header.js'
 import { Row, Col, Carousel } from 'antd'
 import CountUp from 'react-countup'
@@ -10,33 +12,19 @@ import News from '../components/News.js'
 import Awards from '../components/Awards.js'
 //image
 import HeaderImg from '../assets/images/Header.svg'
-import BannerImg from '../assets/images/banner_1_homepage.svg'
+import BannerImg from '../assets/images/home/banner_1_homepage.jpg'
 
-import BannerImg1 from '../assets/images/c_img_1.png'
-import BannerImg2 from '../assets/images/c_img_2.png'
-import BannerImg3 from '../assets/images/c_img_3.png'
+import BannerImg1 from '../assets/images/home/c_img_1.png'
+import BannerImg2 from '../assets/images/home/c_img_2.png'
+import BannerImg3 from '../assets/images/home/c_img_3.png'
 
 import Arrow from '../assets/images/arrow.svg'
 
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
-// import { collection, getDocs } from "firebase/firestore";
-// import {db} from '../firebase.js'
-//team
+
 import { team } from '../data/team'
 
 function Home() {
-  // useEffect(() => {
-  //    async function getBlogs() {
-  //      const querySnapshot = await getDocs(collection(db, "blogs"));
-  //      querySnapshot.forEach((doc) => {
-  //        // doc.data() is never undefined for query doc snapshots
-  //        console.log(doc.id, " => ", doc.data());
-  //      });
-  //    }
-
-  //    getBlogs()
-  // }, [])
 
   return (
     <div>
@@ -54,7 +42,7 @@ function Home() {
         carousel={true}
       />
 
-      <img
+      <LazyLoadImage effect="blur"
         src={BannerImg}
         width='100%'
         className='banner_1_img container-custom'
@@ -75,8 +63,8 @@ function Home() {
       </p>
       <Row className='due-dilligence-banner container-custom padding-block'>
         <Col sm={11} md={11} className='text'>
-          Produced commercial due diligence reports on over{' '}
-          <strong>£7 billion</strong> of health and social care transactions in
+          Produced commercial due diligence reports on over 
+          <strong> £7 billion</strong> of health and social care transactions in
           the last year
         </Col>
         <Col sm={12} md={13} className='numbers'>
@@ -104,18 +92,18 @@ function Home() {
       <Services />
 
       <h2 className='title-medium'>
-        <span className='highlight-text'>Our</span> Clients{' '}
+        <span className='highlight-text'>Our</span> Clients
       </h2>
 
-      <Carousel className='home-carousel' autoplay dots={false}>
+      <Carousel className='home-carousel' autoplay dots={false}> 
         <Row>
-          <img alt='' src={BannerImg1} width='100%' />
+          <LazyLoadImage effect="blur" alt='' src={BannerImg1} width='100%' />
         </Row>
         <Row>
-          <img alt='' src={BannerImg2} width='100%' />
+          <LazyLoadImage effect="blur" alt='' src={BannerImg2} width='100%' />
         </Row>
         <Row>
-          <img alt='' src={BannerImg3} width='100%' />
+          <LazyLoadImage effect="blur" alt='' src={BannerImg3} width='100%' />
         </Row>
       </Carousel>
 
@@ -126,7 +114,7 @@ function Home() {
       <Awards />
 
       <Row className='team-grid container-custom' gutter={[20, 30]}>
-        <Col sm={24} md={9} lg={9}>
+        <Col sm={24} md={10} lg={10} xl={12}>
           <h1>
             Specialists in health, social care, education, pharma, vets and
             students accommadation
@@ -138,24 +126,23 @@ function Home() {
           </p>
           <Link to='team'>
             <button>
-              Meet our experts{' '}
-              <img alt='' src={Arrow} style={{ marginBottom: '3px' }} />
+              Meet our experts
+              <LazyLoadImage effect="blur" alt='' src={Arrow} style={{ marginBottom: '3px' }} />
             </button>
           </Link>
         </Col>
-        <Col sm={24} md={15} lg={15} className='team-grid-img'>
-          {team &&
+        <Col sm={24} md={14} lg={14} xl={12} className='team-grid-img'>
+          {/* {team &&
             team.map((member, i) => {
               return (
-                <img
+                <img effect="blur"
                   src={Object.values(member.image)[0]}
-                  alt=''
+                  alt='team-member'
                   width='120px'
                   key={i}
-                  effect='blur'
                 />
               )
-            })}
+            })} */}
         </Col>
       </Row>
     </div>

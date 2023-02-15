@@ -3,7 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {Row, Col} from 'antd'
 import Header from "../components/Header";
 
-import Img from '../assets/images/Clare-and-Charlotte-Sept-2020.jpg'
+import Img from '../assets/images/banners/clients.png'
 
 function Clients() {
   const [imagesArray, setImagesArray] = useState([]);
@@ -28,7 +28,7 @@ function Clients() {
       <Header 
       subheading="Our Clients"
       title="We have recently completed projects including refinancing, market strategy and commercial due diligence for the following clients:"
-      img={Img}
+      image={Img}
       myClass="smaller-padding-header banner-title-long"
       />
 

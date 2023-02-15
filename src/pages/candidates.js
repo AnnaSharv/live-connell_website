@@ -2,6 +2,11 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Row, Col } from "antd";
 import Header from "../components/Header";
+import Img from '../assets/images/banners/news.png'
+import Img1 from '../assets/images/careers/Screenshot New 1219 7 5.jpg'
+import Img2 from '../assets/images/careers/Screenshot New 1219 7 5-1.jpg'
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 function Candidates() {
   const location = useLocation();
@@ -15,6 +20,7 @@ function Candidates() {
             : "Experienced hires"
         }
         subheading={"Careers"}
+        image={Img}
       />
 
       <div className="service container-custom">
@@ -65,16 +71,16 @@ function Candidates() {
       <Row gutter={[20,30]} className="mtop-80 container-custom">
         <Col sm={24} md={12}>
           {location.pathname.includes("graduates") ? (
-            <img
-              src="https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015.jpg"
-              alt=""
+            <LazyLoadImage effect="blur"
+              src={Img1}
+              alt="graduates"
               className="image-with-box-shadow img-role"
               style={{ maxWidth: "468px", minHeight: "431px", objectFit: "cover" }}
             />
           ) : (
-            <img
-              src="https://www.connell-consulting.com/wp-content/uploads/2021/06/Saiyna-George-Charlotte-Lilya_WEB-RES_009.jpg"
-              alt=""
+            <LazyLoadImage effect="blur"
+              src={Img2}
+              alt="experienced-hires"
               className="image-with-box-shadow img-role"
               style={{ maxWidth: "468px", height: "431px",  objectFit: "cover" }}
             />

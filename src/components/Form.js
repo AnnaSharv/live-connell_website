@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from '@emailjs/browser'
 
 export default function Form() {
@@ -23,15 +23,8 @@ export default function Form() {
     Object.values(user).forEach(val => {
         setUser({...user, name: "", email: "", message: ""})
     });
-
-
-    console.log(form.current);
-
   }
 
-  useEffect(() => {
-    console.log();
-  }, [])
   
   return (
     <form onSubmit={sendInfo} ref={form}>

@@ -11,7 +11,6 @@ function TextField({label, ...props }) {
       <input type="text" 
       placeholder="Enter your digit" 
       {...field} {...props}
-   
       />
     </div>
   );
