@@ -132,7 +132,7 @@ function Home() {
           </Link>
         </Col>
         <Col sm={24} md={14} lg={14} xl={12} className='team-grid-img'>
-          {/* {team &&
+          {team &&
             team.map((member, i) => {
               return (
                 <img effect="blur"
@@ -142,7 +142,7 @@ function Home() {
                   key={i}
                 />
               )
-            })} */}
+            })}
         </Col>
       </Row>
     </div>

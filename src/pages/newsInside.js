@@ -5,6 +5,7 @@ import { db } from "../firebase";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import parse from "html-react-parser";
 import { Spin } from "antd";
+import formatDate from "../utils/formatBlogDate";
 
 function NewsInside() {
   const [news, setNews] = useState([]);
@@ -40,7 +41,8 @@ function NewsInside() {
       : <div className="single-news">
         <h1 className="title">{news?.blog_title}</h1>
         <div className="meta-info">
-          <div>{news?.blog_date}</div>
+          <div>{news?.blog_date && formatDate(news.blog_date)}</div>
+          {/* <div>{news?.blog_date}</div> */}
         </div>
 
         {news?.imgArr?.length > 0 &&

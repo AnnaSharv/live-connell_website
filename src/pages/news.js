@@ -11,13 +11,17 @@ import {db} from '../firebase.js'
 
 import NoImage from '../assets/images/noimage.jpg'
 import Img from '../assets/images/banners/news.png'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
+import formatDate from "../utils/formatBlogDate"; 
 
-function News() {
+function News() { 
   const location = useLocation()
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(false)
   const [limitCount, setLimitCount] = useState(6)
+
+ 
 
 
   useEffect(() => {
@@ -28,9 +32,10 @@ function News() {
 
 
       if(location.pathname.includes("all")) q = query(collection(db, "blogs"), orderBy("blog_date", "desc"), limit(limitCount));
-      if(location.pathname.includes("awards")) q = query(collection(db, "blogs"), where("blog_type", "array-contains", "awards"), limit(limitCount));
-      if(location.pathname.includes("articles")) q = query(collection(db, "blogs"), where("blog_type", "array-contains", "articles"), limit(limitCount));
-      if(location.pathname.includes("deals")) q = query(collection(db, "blogs"), where("blog_type", "array-contains", "deals"), limit(limitCount));
+      if(location.pathname.includes("recent-news")) q = query(collection(db, "blogs"), orderBy("blog_date", "desc"), where("blog_type", "array-contains", "news"), limit(limitCount));
+      if(location.pathname.includes("awards")) q = query(collection(db, "blogs"), orderBy("blog_date", "desc"), where("blog_type", "array-contains", "awards"), limit(limitCount));
+      if(location.pathname.includes("articles")) q = query(collection(db, "blogs"), orderBy("blog_date", "desc"), where("blog_type", "array-contains", "articles"), limit(limitCount));
+      if(location.pathname.includes("deals")) q = query(collection(db, "blogs"), orderBy("blog_date", "desc"), where("blog_type", "array-contains", "deals"), limit(limitCount));
       
 
       const querySnapshot = await getDocs(q);
@@ -56,6 +61,11 @@ function News() {
         <Link to="all">
           <li className={location.pathname.includes("all") ? "active-link" : null}>
             All
+          </li>
+        </Link>
+        <Link to="recent-news">
+          <li className={location.pathname.includes("recent-news") ? "active-link" : null}>
+            News
           </li>
         </Link>
         <Link
@@ -114,7 +124,6 @@ function News() {
               let {data} = n 
              let str = data.blog_title.toLowerCase().split(" ").join("-")
              str = str.substring(0, 50);
-             console.log("first", n.id)
               if (data.blog_status === 'active') {
                   return (
                   <Col xs={12} md={8} key={i}>
@@ -123,7 +132,9 @@ function News() {
                         bordered={false}
                         hoverable
                         cover={
-                          <img
+                          <LazyLoadImage
+                            effect="blur"
+                            width={'100%'}
                             alt="example"
                             src={data.imgArr[0]?.blog_image || NoImage}
                             // onError={() => setImagePlaceholder(true)}
@@ -134,9 +145,12 @@ function News() {
                           "fontSize": "12px",
                           "fontFamily": 'MonserratMedium',
                           "marginBottom": "-12px"
-                        }}>{data.blog_date}</h6>
+                        }}>
+                          {/* {data.blog_date} */}
+                          {formatDate(data.blog_date)}
+                        </h6>
                         <h6 className="text-elipse text-elipse-four-lines text-regular text-regular-bold">
-                          {parse(data.blog_title)} 
+                          {parse(data.blog_title)}
                         </h6>
                         <div className="text-regular text-elipse text-elipse-small">
                           {parse(data.blog_body)}

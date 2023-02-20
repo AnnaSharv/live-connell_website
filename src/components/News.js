@@ -11,6 +11,8 @@ import {db} from '../firebase.js'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
+import formatDate from "../utils/formatBlogDate";
+
 function News() {
   const [news, setNews] = useState([])
 
@@ -44,7 +46,7 @@ function News() {
           />
 
           <div className="recent-news">
-              <h6 className="sup">{news[0]?.data?.blog_date}</h6>
+              <h6 className="sup">{news[0]?.data?.blog_date && formatDate(news[0].data.blog_date)}</h6>
               <h2 className="title-regular text-start text-elipse text-elipse-two-lines" style={{"marginBottom": "10px"}}>{news[0]?.data?.blog_title}</h2>
               <div className="text-regular text-elipse">{news[0]?.data?.blog_body && parse(news[0].data.blog_body)}</div>
           </div>

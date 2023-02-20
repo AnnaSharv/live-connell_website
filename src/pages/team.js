@@ -49,7 +49,7 @@ function Team() {
      
 
       <Row className="team_image_container gx-5 container-custom" gutter={[20, 60]}>
-        {/* {team && team.map((teamMember) => {
+        {team && team.map((teamMember) => {
           if(teamMember.data?.member_name?.includes("Clare Connell") || teamMember.data?.member_name?.includes("Gonçalo Silva")) {
             return (
               <Col key={teamMember.id} className="member_card" xs={12} sm={12} md={6}>
@@ -71,7 +71,7 @@ function Team() {
             </Col>
             )
            }
-        })} */}
+        })}
         {team?.map((teamMember) => {         
          if(teamMember.data.member_status === 'active' && !teamMember.data.member_name.includes("Clare Connell") && !teamMember.data.member_name.includes("Gonçalo Silva")) {
            return (
