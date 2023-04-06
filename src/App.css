@@ -31,7 +31,9 @@
 button:disabled {
   cursor: not-allowed;
 }
-
+.scrollbtnshow {
+  opacity: 1 !important;
+}
 input,
 select,
 textarea,
@@ -237,10 +239,15 @@ ul {
   border-radius: 4px;
   background: transparent;
   padding: 0 18px;
-  transition: 0.4s;
+  transition: all 0.4s;
 }
 .button-outline img {
   margin-left: 10px;
+}
+.button-outline:hover img {
+  transition: all 0.4s;
+
+  filter: brightness(0) invert(1);
 }
 .button-solid:hover,
 .button-outline:hover {
@@ -272,6 +279,28 @@ ul {
 .home-carousel .slick-list {
   height: auto;
 }
+.home-slider {
+  max-width: 1700px;
+  margin-inline: auto;
+}
+.home-slider .slick-track{
+    height: 115px !important;
+}
+.home-slider .slick-track  *{
+    height: 100% !important;
+    object-fit: cover;
+}
+.home-slider .slick-track img{
+    padding: 5px
+}
+.home-slider .img,
+.home-slider .img
+{
+    object-fit: contain !important;
+}
+.home-slider .img {
+  object-fit: fill !important;
+}
 .slick-slide .ant-card-cover span {
   overflow: hidden;
 }
@@ -280,6 +309,9 @@ ul {
   .lazy-load-image-background.blur.lazy-load-image-loaded
   > img {
   width: 100%;
+}
+.my-carousel {
+  height: 100%  !important;
 }
 .my-carousel .slick-dots {
   padding-left: 6.8% !important;
@@ -316,14 +348,15 @@ ul {
 }
 
 .subheading {
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 5px;
+  font-size: 16px;
   color: var(--black);
   font-family: 'MonserratBold';
 }
 .title {
   line-height: 42px;
-  font-size: 2.6rem;
+  font-size: 42px;
+  /* font-size: 2.6rem; */
   margin-bottom: 20px;
   font-family: 'MonserratRegular';
   max-width: 550px;
@@ -375,6 +408,9 @@ ul {
   object-fit: cover;
   object-position: 20% 22%;
 }
+.gradient-image-banner .news {
+  object-position: 20% 32%;
+}
 .gradient-image-banner {
   position: relative;
 }
@@ -410,6 +446,9 @@ ul {
   font-size: 16px;
   font-family: 'MonserratMedium';
 }
+.alice-carousel__stage li:empty {
+  display: none !important;
+}
 .banner {
   position: relative;
   padding: 50px 0;
@@ -421,9 +460,7 @@ ul {
 .OurServicesShort {
   margin: 80px 0 0 0;
 }
-.OurServicesShort .ant-card {
-  box-shadow: none !important;
-}
+
 .OurServicesShort .ant-card .ant-card-cover img,
 .OurServicesShort .ant-card-body {
   border-radius: 0;
@@ -483,7 +520,7 @@ ul {
   max-width: 60vw;
   object-fit: cover;
   object-position: top center;
-  aspect-ratio: 2/1;
+  /* aspect-ratio: 2/1; */
 }
 .single-news .meta-info {
   margin: 10px 0 20px;
@@ -615,6 +652,7 @@ ul {
 .awards-list .ant-row {
   margin: 97px 0 118px;
   justify-content: center;
+  width: 100%;
   /* grid-row-gap: 163px; */
 }
 
@@ -623,6 +661,9 @@ footer {
   display: flex;
   justify-content: space-between;
   padding-top: 30px;
+
+  flex-wrap: wrap;
+  grid-row-gap: 20px;
 }
 
 .line::before {
@@ -635,12 +676,12 @@ footer {
   background-color: var(--blacklight);
 }
 .footer-left {
-  font-size: 18px;
+  font-size: 14px;
   color: #11131540;
   font-family: 'MonserratMedium';
 }
 .footer-right {
-  font-size: 18px;
+  font-size: 14px;
   grid-column-gap: 30px;
 }
 
@@ -670,9 +711,18 @@ footer {
   /* transform: translateX(12px); */
   margin-bottom: 30px;
 }
+.sub-list {
+  width: 95%;
+  margin: 10px auto;
+}
+.sub-list li::before {
+  background:white !important;
+  border: 1px solid;
+}
 .ul ul li,
 .text-regular-bold,
-.text-normal {
+.text-normal,
+.what-differentiates-us {
   font-family: MonserratMedium;
   font-size: 16px;
   display: flex;
@@ -680,15 +730,21 @@ footer {
   column-gap: 15px;
   line-height: 20px;
 }
+.ul ul li {
+  align-items: unset;
+}
 .ul ul li::before {
   content: '';
-  width: 4px;
+  min-width: 4px;
   height: 4px;
   background: var(--black);
   position: relative;
   display: block;
   border-radius: 50px;
+  margin-top: 8px;
 }
+
+
 .services-container h2.title-medium {
   padding-top: 80px;
   position: relative;
@@ -749,6 +805,51 @@ footer {
 .services-container h2:not(.first) {
   padding-top: 120px;
 }
+/* events */
+.events-gallery {
+  display: grid;
+  gap: 20px;
+}
+
+.events-gallery .events-row,
+.events-gallery .events-row .quarter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.events-gallery .full-width {
+  min-height: 400px;
+}
+.events-gallery .full-width img,
+.events-gallery .full-width .ant-image-mask {
+  object-position: center top;
+  max-height: 420px;
+}
+.events-gallery .quarter img,
+.events-gallery .quarter .ant-image-mask {
+  object-position: center top;
+  max-height: 200px;
+}
+.events-gallery .ant-image {
+  padding: 0;
+}
+.events-gallery .ant-image-mask {
+  background-color: #1D469640;
+  border-radius: 10px;
+}
+.events-gallery .ant-image-mask:hover {
+  opacity: 0.8
+}
+.events-gallery .ant-image-mask-info {
+    display: none;
+}
+.events-gallery img {
+  border-radius: 10px;
+  object-fit: cover;
+  height: 100% !important;
+}
+
 
 /* sectors */
 
@@ -758,13 +859,20 @@ footer {
   overflow: hidden;
 }
 .sector-card img {
-  transition: 0.4s;
   min-height: 149px;
   object-fit: cover;
 }
-.sector-card span:hover img {
+
+
+
+.sector-cards-img {
+  transition: transform 0.3s !important;
+}
+
+.sector-card:hover .sector-cards-img {
   transform: scale(1.1);
 }
+
 .sector-card span::before {
   content: '';
   position: absolute;
@@ -854,6 +962,7 @@ footer {
   display: flex;
   gap: 20px;
 }
+
 .transactions h2 {
   margin-bottom: 30px;
 }
@@ -1046,7 +1155,36 @@ footer {
 
 /* responsive */
 
-@media only screen and (min-width: 768.5px) and (max-width: 1320px) {
+@media only screen and (max-width: 1125px) { 
+  .img-role {
+    width: 100% !important;
+    min-height: auto !important;
+  }
+}
+
+@media only screen and (min-width: 1320px) {
+  .concat-arr-images .slick-slide[data-index="36"] img {
+      width: 80% !important;
+      margin-left: 30px;
+  }
+  .concat-arr-images .slick-slide[data-index="66"] img,
+  .concat-arr-images .slick-slide[data-index="67"] img,
+  .concat-arr-images .slick-slide[data-index="72"] img,
+  .concat-arr-images .slick-slide[data-index="83"] img  {
+      object-fit: contain;
+  }
+  .concat-arr-images .slick-slide[data-index="83"] img,
+  .concat-arr-images .slick-slide[data-index="141"] img {
+    padding: 0 !important;
+  }
+ 
+  .concat-arr-images .slick-slide[data-index="16"] img {
+       width: 84%;
+   
+  }
+  
+}
+@media only screen and (min-width: 767.5.5px) and (max-width: 1320px) {
   .image-with-box-shadow {
     width: 100%;
   }
@@ -1074,7 +1212,40 @@ footer {
     width: 100%;
   }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1000px) {
+  .clients_image_card:nth-child(19) img,
+  .clients_image_card:nth-child(62) img,
+  .clients_image_card:nth-child(79) img,
+  .clients_image_card:nth-child(82) img,
+  .clients_image_card:nth-child(148) img {
+    max-width: 85% !important;
+    /* margin: auto;
+    display: grid; */
+  }
+  .clients_image_card:nth-child(98) img {
+    object-fit: contain !important;
+  }
+
+  .clients_image_card:nth-child(2) img {
+    transform: translateX(0px);
+  }
+}
+@media only screen and (min-width: 767.5px) and (max-width: 997px) {
+  .my-carousel-image {
+    min-height: 437px !important;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+  .clients_image_card:nth-child(62) img {
+    max-width: 78% !important;
+    display: grid;
+    margin: auto;
+  }
+}
+
+
+@media only screen and (max-width: 767.5.5px) {
+  
   .sector-cards-img {
     aspect-ratio: 2.5/1;
     object-position: center;
@@ -1229,6 +1400,7 @@ footer {
   .clients_image_array {
     width: 100%;
     left: 0;
+    margin: 0 !important;
   }
 
   /* sectors */
@@ -1290,8 +1462,69 @@ footer {
   .contact-info div {
     padding: 30px 18px !important;
   }
+
+ 
 }
 @media only screen and (max-width: 641px) {
+  .events-gallery .full-width {
+    min-height: auto;
+  }
+  .footer-right {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  .concat-arr-images img {
+    object-fit: contain !important;
+  }
+  .concat-arr-images .slick-slide[data-index="36"] img {
+    width: 80% !important;
+    margin-left: 30px;
+}
+.team-grid-img {
+  gap: 8px 8px !important;
+}
+.awards-list .award-card:last-child img {
+  padding: 23px;
+}
+
+.concat-arr-images .slick-slide[data-index="16"] img {
+     width: 100%;
+}
+  /* sectors */ 
+  .sectors .title {
+    font-size: 30px;
+    line-height: 32px;
+  }
+ 
+  /* banner */
+  .gradient-image-banner img {
+    height: 156px;
+  }
+  /* events */
+  .events-gallery .full-width {
+    height: 200px;
+  }
+  .events-gallery .events-row {
+    grid-template-columns: 1fr;
+  }
+  .events-gallery {
+    margin-top: 25px !important;
+    gap: 5px;
+  }
+  .events-paragraph {
+    font-family: 'MonserratBold'  !important;
+    font-size: 18px  !important;
+    line-height: 24px  !important;
+    transform: translateX(-10px);
+  }
+  .events-gallery .events-row, .events-gallery .events-row .quarter {
+    gap: 5px;
+  }
+  .events-gallery img,
+  .events-gallery .ant-image-mask {
+    border-radius: 4px;
+  }
+  /* end events */
   .single-news img {
     max-width: 100%;
   }
@@ -1406,7 +1639,7 @@ footer {
   text-align: center;
 }
 .due-dilligence-banner span:nth-child(1) {
-  font-size: 84px;
+  font-size: 80px;
   font-family: 'MonserratMedium';
 }
 .due-dilligence-banner .numbers span:nth-child(1)::after {
@@ -1444,7 +1677,7 @@ footer {
   margin: 5px 0;
 }
 .team-grid-img img {
-  width: 120px;
+  width: 125px;
   height: 120px;
   border-radius: 8px;
   object-fit: cover;
@@ -1461,7 +1694,7 @@ footer {
 }
 
 .team-grid-img img:nth-child(1) {
-  grid-area: 1/1 / span 1 / span 5;
+  grid-area: 1/1 / span 1 / span 6;
   display: block;
   margin-left: auto;
 }
@@ -1617,6 +1850,7 @@ footer {
 .banner-title-long .title {
   font-size: 24px;
   line-height: 29.26px;
+  font-family: 'MonserratMedium';
 }
 
 .view-profile {
@@ -1678,6 +1912,10 @@ footer {
   font-family: 'MonserratMedium';
   line-height: 20px;
   font-size: 14px;
+  display: none;
+}
+.news-card-bg-transparent .ant-card p:nth-child(1) {
+  display: block;
 }
 /* faq */
 .packages-card {
@@ -1710,6 +1948,19 @@ footer {
   text-align: left !important;
 }
 @media only screen and (max-width: 991px) {
+  .team-grid-img img {
+    height: auto;
+  }
+  .award-card img {
+    width: 200px;
+  }
+ .numbers div {
+  min-width: 219px;
+ }
+  .langing-page-header div {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
   .nav-right {
     align-items: start;
   }
@@ -1757,11 +2008,28 @@ footer {
 
 /* carousel and banner image responsive */
 @media only screen and (max-width: 767px) {
+  .banner-redirect-button {
+    margin-top: 20px;
+  }
+  .sector-card-healthcare img {
+    aspect-ratio: 2/1 !important;
+    object-position: center 28%;
+  }
+  .langing-page-header div:nth-child(1) {
+   padding-top: 60px !important; 
+  }
+  .langing-page-header div:nth-child(2) {
+   margin-bottom: 60px !important; 
+   width: 100%;
+  }
   .my-carousel-image {
     height: 231px !important;
   }
   .my-carousel {
     height: 600px;
+  }
+  .my-carousel div:nth-child(2) {
+    margin-bottom: 0 !important;
   }
 }
 @media only screen and (max-width: 616px) {
@@ -1774,8 +2042,45 @@ footer {
     bottom: -30px
   }
 }
-@media only screen and (min-width:768px) and (max-width: 1228px) {
-  .gradient-image-banner img {
+@media only screen and (min-width:767.5px) and (max-width: 1228px) {
+  .gradient-image-banner img:not(.gradient-image-banner .news) {
     height: 100%;
+  }
+}
+@media only screen and (min-width:991px) and (max-width: 1050px) {
+  .nav-right .button-solid {
+    text-align: center;
+    padding: 10px 15px;
+    height: auto;
+  }
+  .nav-top .mail {
+    width: 100%;
+    position: absolute;
+    left: -36px;
+  }
+}
+
+
+@media screen and (min-width: 767.5px) {
+  .OurServicesShort {
+    overflow: hidden;
+  }
+  .OurServicesShort .ant-card,
+  .OurServicesShort .ant-card-body {
+    box-shadow: none !important;
+    height: 100% !important;
+  }
+}
+@media screen and (max-width: 711px) {
+  .award-card img {
+    width: 100%;
+    height: auto;
+  }
+  .award-card {
+    display: flex;
+    align-items: center;
+  }
+  .awards-list .ant-row {
+    margin-inline: 0 !important;
   }
 }

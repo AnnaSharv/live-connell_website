@@ -22,7 +22,7 @@ function SectorCards() {
         <Link to="pharma-and-life-sciences"><p>Pharma & <br /> Life Sciences</p></Link>
       </Col>
       <Col className="sector-card" sm={24} md={8}>
-        <span> <LazyLoadImage effect="blur" src={Img3} width="100%" alt="" className="sector-cards-img" /></span>
+        <span className="sector-card-healthcare"> <LazyLoadImage effect="blur" src={Img3} width="100%" alt="" className="sector-cards-img" /></span>
         <Link to="healthcare"><p>Healthcare</p></Link>
       </Col>
 

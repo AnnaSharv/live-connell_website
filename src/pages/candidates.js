@@ -3,8 +3,10 @@ import { useLocation } from "react-router-dom";
 import { Row, Col } from "antd";
 import Header from "../components/Header";
 import Img from '../assets/images/banners/news.png'
-import Img1 from '../assets/images/careers/Screenshot New 1219 7 5.jpg'
-import Img2 from '../assets/images/careers/Screenshot New 1219 7 5-1.jpg'
+import Img_graduates from '../assets/images/careers/Screenshot New 1219 7 5.jpg'
+import Img_experienced from '../assets/images/careers/Screenshot New 1219 7 5-1.jpg'
+import Banner_graduates from '../assets/images/careers/Graduates Page - Cheran and Safia (1).jpg'
+import Banner_experienced from '../assets/images/careers/Experienced Hires Page - Matt Cheran (1).jpg'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
@@ -20,7 +22,16 @@ function Candidates() {
             : "Experienced hires"
         }
         subheading={"Careers"}
-        image={Img}
+        image={
+          pathname.includes("graduates")
+          ? Banner_graduates
+          : Banner_experienced
+        }
+        imageposition={
+          pathname.includes("graduates")
+          ? null
+          : "candidates_experienced"
+        }
       />
 
       <div className="service container-custom">
@@ -49,7 +60,7 @@ function Candidates() {
             <Col className="text-decor" sm={24} md={12}>
               Consultants typically join Connell Consulting as an experienced
               professional, with extensive proven experience of carrying out
-              consulting work. <br />
+              consulting work. <br /> <br />
               As a Consultant you’ll be responsible for managing teams in the
               design, development, and delivery of consulting projects. In
               delivering projects, you will be working in a team of like-minded
@@ -72,14 +83,14 @@ function Candidates() {
         <Col sm={24} md={12}>
           {location.pathname.includes("graduates") ? (
             <LazyLoadImage effect="blur"
-              src={Img1}
+              src={Img_graduates}
               alt="graduates"
               className="image-with-box-shadow img-role"
               style={{ maxWidth: "468px", minHeight: "431px", objectFit: "cover" }}
             />
           ) : (
             <LazyLoadImage effect="blur"
-              src={Img2}
+              src={Img_experienced}
               alt="experienced-hires"
               className="image-with-box-shadow img-role"
               style={{ maxWidth: "468px", height: "431px",  objectFit: "cover" }}
@@ -150,8 +161,7 @@ function Candidates() {
                 </li>
 
                 <li>
-                  Experience of using Google apps or a good knowledge of UK
-                  geography, as our projects are mainly UK based
+                  Good working knowledge of UK geography
                 </li>
                 <li>Right to work in the UK</li>
               </ul>
@@ -198,8 +208,7 @@ function Candidates() {
                   PowerPoint)
                 </li>
                 <li>
-                  Experience of using Google apps or a good knowledge of UK
-                  geography, as our projects are mainly UK based
+                  Good working knowledge of UK geography
                 </li>
                 <li>Right to work in the UK</li>
               </ul>
@@ -219,16 +228,19 @@ function Candidates() {
                   <li>Full time, permanent role</li>
                   <li>Competitive salary (subject to experience)</li>
                   <li>
-                    25 days annual leave plus UK bank holidays Company pension
-                    scheme
+                    25 days annual leave plus UK bank holidays 
                   </li>
-                  <li>Private healthcare and dental insurance Free lunch</li>
+                  <li>
+                    Company pension
+                  </li>
+                  <li>Private healthcare and dental insurance</li>
+                  <li>Free lunch</li>
                 </ul>
               </div>
             </div>
             <div className="packages-card">
               <h2 className="title-medium text-start m-0">How to apply</h2>
-              <div className="ul mt-3">
+              <div className="ul mt-3  ">
                 <ul>
                   <li>
                     Candidates should email their CV / resume and covering
@@ -239,7 +251,7 @@ function Candidates() {
                     London for an interview
                   </li>
                   <li>
-                    We are now accepting applications for Business Analysts.
+                    We are now accepting applications for Business Analysts
                   </li>
                 </ul>
               </div>
@@ -254,17 +266,16 @@ function Candidates() {
                 <ul>
                   <li>Full time, permanent role</li>
                   <li>Competitive salary (subject to experience)</li>
-                  <li>
-                    25 days annual leave plus UK bank holidays Company pension
-                    scheme
-                  </li>
-                  <li>Private healthcare and dental insurance Free lunch</li>
+                  <li> 25 days annual leave plus UK bank holidays</li>
+                  <li>Company pension</li>
+                  <li>Private healthcare and dental insurance</li>
+                  <li>Free lunch</li>
                 </ul>
               </div>
             </div>
             <div className="packages-card">
               <h2 className="title-medium text-start m-0">How to apply</h2>
-              <div className="ul mt-3">
+              <div className="ul mt-3  ">
                 <ul>
                   <li>
                     Candidates should email their CV / resume and covering
@@ -275,7 +286,7 @@ function Candidates() {
                     London for an interview
                   </li>
                   <li>
-                    We are now accepting applications for Business Analysts.
+                    We are now accepting applications for experienced hires
                   </li>
                 </ul>
               </div>

@@ -10,7 +10,7 @@ import {db} from '../firebase.js'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-function TabsCustom() {
+function TabsCustom({transactionsfull}) {
   const param = useParams();
   const [routeName, setRouteName] = useState("all");
   const [transactions, setTransactions] = useState([])
@@ -21,17 +21,17 @@ function TabsCustom() {
   let list = []
 
   useEffect(() => {
-    async function getData() {
-      const list = []
-      const q = query(collection(db, "transactions"), orderBy("transactions_date", "desc"));
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        list.push({id: doc.id, data: doc.data()})
-      });
-      setTransactions(list)
-    }
-    getData() 
+    // async function getData() {
+    //   const list = []
+    //   const q = query(collection(db, "transactions"), orderBy("transactions_year", "desc"));
+    //   const querySnapshot = await getDocs(q);
+    //   querySnapshot.forEach((doc) => {
+    //     // doc.data() is never undefined for query doc snapshots
+    //     list.push({id: doc.id, data: doc.data()})
+    //   });
+    //   setTransactions(list)
+    // }
+    // getData() 
 
     for (let i = 0; i <= 25; i++) {
       y = currentYear--
@@ -45,8 +45,13 @@ function TabsCustom() {
     "nav nav-bottom navbar-collapse collapse show"
 
     let dropdown = document.querySelector(".chosen-year-menu .nav")
-    dropdown.classList.contains("show") && dropdown.classList.remove("show")
+    if(dropdown) {
+        dropdown.classList.contains("show") && dropdown.classList.remove("show")
+    }
+  
   })
+
+
     
   }, [])
 
@@ -68,7 +73,7 @@ function TabsCustom() {
           <Nav className="nav-left">
           <Nav className="nav-left">
             <Link to={"all"}>
-              <li className={routeName.includes("all") ? 'active-link' : null}> All  </li>
+              <li className={routeName.includes("all") ? 'active-link' : ""}> All  </li>
             </Link>
              {
               years.length > 0 ?
@@ -76,7 +81,7 @@ function TabsCustom() {
                   if (year !== 2015) {
                     return (
                     <Link to={year.toString()} key={i}>
-                      <li className={routeName.includes(year.toString()) ? 'active-link' : null}> {year} </li>
+                      <li className={routeName.includes(year.toString()) ? 'active-link' : ""}> {year} </li>
                     </Link>
                     )
                   }
@@ -90,20 +95,36 @@ function TabsCustom() {
       </Navbar>
 
       <Row className="transactions-image-container" gutter={[20, 30]}>
-        {transactions.length > 0 ? transactions.map((tr,i) => {
+        {transactionsfull.length > 0 ? transactionsfull.map((tr,i) => {
+        
           if (routeName === "all" && tr.data.transactions_status === 'active') {
             return (
-              <Col sm={12} md={6} title={"tr.header"} key={i}>
+              <Col xs={12} sm={8} md={6} title={"tr.header"} key={i}>
                 {/* <img src={image} loading="lazy" width="100%"/> */}
-                <LazyLoadImage src={tr.data.transactions_image} width="100%" effect="blur" style={{"maxHeight": "413px"}} />
+                {
+                  tr.data?.transactions_title?.length > 0 ?
+                  <Link to={`/news/blogs/${tr.data?.blog_title?.toLowerCase().split(" ").join("-").substring(0, 50)}?id=${tr.data?.draft_id}`} >
+                    <LazyLoadImage src={tr.data.transactions_image} width="100%" effect="blur" style={{"maxHeight": "413px", "objectFit": "contain"}} />
+                  </Link>
+                  :  <LazyLoadImage src={tr.data.transactions_image} width="100%" effect="blur" style={{"maxHeight": "413px", "objectFit": "contain"}}/>
+                }
               </Col>
             );
           }
           if (tr.data.transactions_year.toString() === routeName.toString() && tr.data.transactions_status === 'active') {
             return (
-              <Col sm={12} md={6} title={"tr.header"} key={i}>
+              <Col xs={12} sm={8} md={6} title={"tr.header"} key={i}>
                 {/* <img src={image} loading="lazy" width="100%"/> */}
-                <LazyLoadImage src={tr.data.transactions_image} width="100%" effect="blur" style={{"maxHeight": "413px"}} />
+                {/* <LazyLoadImage src={tr.data.transactions_image} width="100%" effect="blur" style={{"maxHeight": "413px", "objectFit": "contain"}} /> */}
+
+
+                  {
+                  tr.data?.blog_title?.length > 0 ?
+                  <a href={`#/news/blogs/${tr.data.blog_title?.toLowerCase().split(" ").join("-").substring(0, 50)}?id=${tr.data?.draft_id}`}>
+                    <LazyLoadImage src={tr.data.transactions_image} width="100%" effect="blur" style={{"maxHeight": "413px", "objectFit": "contain"}} />
+                  </a>
+                  :  <LazyLoadImage src={tr.data.transactions_image} width="100%" effect="blur" style={{"maxHeight": "413px", "objectFit": "contain"}} />
+                }
               </Col>
             );
           }

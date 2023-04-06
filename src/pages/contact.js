@@ -31,8 +31,8 @@ function Contact() {
 
             <p className="title">Location:</p>
             <p className="description">
-              9 Catherine Place WestminsterLondon
-              <span className="d-block m-0">SW1E 6DX</span>
+              9 Catherine Place, London
+              <span className=" m-0"> SW1E 6DX</span>
             </p>
 
             <p className="title">Directions:</p>

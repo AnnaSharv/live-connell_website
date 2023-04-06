@@ -2,14 +2,14 @@ import React from "react";
 import { Link} from "react-router-dom";
 import {Row, Col, List} from 'antd'
 
-import Img from '../assets/images/banners/careers.png'
-import Img1 from "../assets/images/careers/full-width-img.jpg";
+import Img from '../assets/images/banners/careers_banner.jpg'
+import Img1 from '../assets/images/banners/careers.jpg';
 
 
 import Header from "../components/Header.js";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-function careers() {
+function careers() { 
   const data = [
     {
       question:"Do you sponsor visas for international applicants?",
@@ -24,7 +24,7 @@ function careers() {
       answer:"Internship opportunities may be available over the summer period. Please get in touch with careers@connell-consulting.com to see if there are any openings before submitting an application."
     },
     {
-      question:"Are there opportunities to intern with Connell Consulting?",
+      question:"I’ve been working for a few years but have never worked in consulting before. Is there scope to join Connell Consulting as an experienced hire?",
       answer:"Most of our experienced hires have had some previous experience within strategy consulting. We do however accept applications for Analyst roles from people who have no directly relevant consulting experience."
     }
   ];
@@ -90,8 +90,7 @@ function careers() {
       <div className="ul mbottom-80  container-custom">
         <ul>
           <li>
-            A strong academic record, including an MBA from a top business
-            school OR an experienced professional
+            A strong academic record
           </li>
           <li>
             Self-starter mentality and a curiosity for solving business problems
@@ -120,19 +119,17 @@ function careers() {
             Experience of working with MS Office (Word, Excel and PowerPoint)
           </li>
           <li>
-            Experience of using Google apps or a good knowledge of UK geography,
-            as our projects are mainly UK based
+            Good working knowledge of UK geography
           </li>
           <li>Right to work in the UK</li>
         </ul>
       </div>
 
       <div className="mbottom-80 careers-buttons-wrapper  container-custom">
-        <h1 className="title-regular">Choose perfect for you:</h1>
         <Row gutter={[20,30]}>
            <Col sm={24} md={12}>
               <Link to="graduates">
-                  <button className="button-solid">Graduates recruitment</button>
+                  <button className="button-solid">Graduate recruitment</button>
                 </Link>
            </Col>
            <Col sm={24} md={12}>

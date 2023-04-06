@@ -19,7 +19,7 @@ function News() {
   const location = useLocation()
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(false)
-  const [limitCount, setLimitCount] = useState(6)
+  const [limitCount, setLimitCount] = useState(9)
 
  
 
@@ -94,7 +94,7 @@ function News() {
 
       <Row
         gutter={[{xs:20, sm:40, md:60, lg:120}, 60]}
-        className="transactions news-card-bg-transparent  container-custom"
+        className="transactions news-card-bg-transparent news-card-ios  container-custom"
       >
         {loading ? (
           <>
@@ -122,13 +122,18 @@ function News() {
           {
             news.length > 0 ? news.map((n,i) => {
               let {data} = n 
-             let str = data.blog_title.toLowerCase().split(" ").join("-")
-             str = str.substring(0, 50);
-              if (data.blog_status === 'active') {
+             let str = data.blog_title?.toLowerCase().split(" ").join("-")
+             if(str.length >= 50) {
+              str = str.substring(0, 50)
+             } else {
+              str = str.substring(0, str?.length - 1)
+             }
+              if (data?.blog_status === 'active') {
                   return (
                   <Col xs={12} md={8} key={i}>
-                    <Link to={`blogs/${str}?id=${n.id}`}>
+                    <Link to={`blogs/${str}?id=${n?.id}`}>
                       <Card
+                        onClick={() => console.log("testing error", str, n?.id)}
                         bordered={false}
                         hoverable
                         cover={
@@ -147,13 +152,13 @@ function News() {
                           "marginBottom": "-12px"
                         }}>
                           {/* {data.blog_date} */}
-                          {formatDate(data.blog_date)}
+                          {formatDate(data?.blog_date)}
                         </h6>
                         <h6 className="text-elipse text-elipse-four-lines text-regular text-regular-bold">
-                          {parse(data.blog_title)}
+                          {parse(data?.blog_title)}
                         </h6>
                         <div className="text-regular text-elipse text-elipse-small">
-                          {parse(data.blog_body)}
+                          {parse(data?.blog_body)}
                         </div>
                       </Card>
                     </Link>
@@ -179,7 +184,7 @@ function News() {
           className="d-flex justify-content-center align-items-center border-0 button-solid mx-auto"
           style={{ margin: "60px 0 160px" }}
           onClick={() => {
-            setLimitCount(limitCount + 6)
+            setLimitCount(limitCount + 9)
           }}
            disabled={limitCount > news.length}
         >

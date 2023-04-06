@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import {db} from '../firebase.js'
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 
 function Transactions(props) {
   const [transactions, setTransactions] = useState([])
@@ -51,7 +52,7 @@ function Transactions(props) {
   useEffect(() => {
     async function getData() {
       const list = []
-      const q = query(collection(db, "transactions"), orderBy("transactions_year", "desc"), limit(10));
+      const q = query(collection(db, "transactions"), orderBy("transactions_year", "desc"), orderBy("orderId", "asc"), limit(10));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
@@ -73,9 +74,21 @@ function Transactions(props) {
             transactions.map((transaction,i) => {
               if(transaction.data.transactions_status === "active") {
                 return (
-                  <Card key={i} bordered={false} title={`Year ${transaction.data.transactions_year}`} hoverable cover={<LazyLoadImage title={transaction.data.transactions_title} alt={transaction.data.transactions_title} src={transaction.data.transactions_image} effect="blur"/>}>
-                      <p className="text-regular text-elipse text-elipse-small">{transaction.data.transactions_title}</p>
+                  transaction.data?.blog_title?.length > 0 ?
+                  <Link to={`/news/blogs/${transaction.data.blog_title?.toLowerCase().split(" ").join("-").substring(0, 50)}?id=${transaction.data?.draft_id}`} key={i}>
+                  <Card key={i} bordered={false} hoverable >
+                      <LazyLoadImage style={{objectFit: 'contain'}} width={'100%'} height={'292px'} title={transaction.data.transactions_title} alt={transaction.data.transactions_title} src={transaction.data.transactions_image} effect="blur"/>
                   </Card>
+                   {/* <Card key={i} bordered={false} title={`Year ${transaction.data.transactions_year}`} hoverable cover={<LazyLoadImage title={transaction.data.transactions_title} alt={transaction.data.transactions_title} src={transaction.data.transactions_image} effect="blur"/>}>
+                       <p className="text-regular text-elipse text-elipse-small">{transaction.data.transactions_title}</p>
+                   </Card> */}
+                  </Link>
+                  : (
+                    <Card key={i} bordered={false} hoverable style={{cursor: 'default !important'}} >
+                      <LazyLoadImage style={{objectFit: 'contain'}} width={'100%'} height={'292px'} title={transaction.data.transactions_title} alt={transaction.data.transactions_title} src={transaction.data.transactions_image} effect="blur"/>
+                    </Card>
+                  )
+               
                 )
               }
               

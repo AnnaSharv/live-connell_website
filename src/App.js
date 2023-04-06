@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Authcontext from "./pages/context/Authcontext";
 //components
@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 
 //page
 import Home from "./pages/home";
+import Events from "./pages/events";
 import Services from "./pages/services";
 import Sectors from "./pages/sectors";
 import SectorsInside from "./pages/sectorsInside";
@@ -24,19 +25,22 @@ import MetaInfo from "./pages/metaInfo";
 import NewsInside from "./pages/newsInside";
 
 
-
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "./firebase";
+import ScrollUpButton from "./components/ScrollUpButton";
 
 function App() {
   const [userStatus, setUserStatus] = useState(null)
+  const [transactions, setTransactions] = useState([])
+  const [transactionsfull, setTransactionsfull] = useState([])
+
  
  
 
   const Wrapper = ({children}) => {
     const location = useLocation();
     useLayoutEffect(() => {
-      if(location.pathname.includes("news") 
-          || location.pathname.includes("transactions") 
-          || location.pathname.includes("news") )
+      if(location.pathname.includes("news")  || location.pathname.includes("transactions")  )
       {
        return 
       } else {
@@ -48,6 +52,28 @@ function App() {
     return children
   } 
 
+
+
+  useEffect(() => {
+    //fetch transactions
+    async function transactions() {
+      const list = []
+      const listfull = []
+      const q = query(collection(db, "transactions"), orderBy("orderId", "asc"));
+      // const q = query(collection(db, "transactions"), orderBy("transactions_year", "desc"), orderBy("orderId", "asc"));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        list.push({id: doc.id, blog_title: doc.data().blog_title, blog_id: doc.data().draft_id})
+        listfull.push({id: doc.id, data: doc.data()})
+      });
+      setTransactions(list)
+      setTransactionsfull(listfull)
+    }
+    transactions() 
+    // console.log("transaction fetch")
+  }, [])
+  
 
 
 
@@ -71,15 +97,17 @@ function App() {
         <div className="App">
           <Wrapper>
             <Navigation />
+            <ScrollUpButton />
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="*" element={<Home />} />
+              <Route path="/" element={<Home transactions={transactions}/>} />
+              <Route path="*" element={<Home transactions={transactions}/>} />
               {/* <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={
                 <RequiresAuth>
                   <Dashboard />
                 </RequiresAuth>
               } /> */}
+              <Route path="/events" element={<Events />} />
               <Route path="/services" element={<Services />} />
               <Route path="/sectors" element={<Sectors />} />
               <Route path="/sectors/*" element={<SectorsInside />} />
@@ -87,7 +115,7 @@ function App() {
               <Route path="/news/*" element={<News />} />
               <Route path="/news/blogs/*" element={<NewsInside />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/transactions/*" element={<Transactions />} />
+              <Route path="/transactions/*" element={<Transactions transactionsfull={transactionsfull}/>} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/careers/*" element={<Candidates />} />
               <Route path="/team" element={<Team />} />

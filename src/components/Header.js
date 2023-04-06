@@ -10,14 +10,8 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import {db} from '../firebase.js'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
-function Header({carousel, subheading, title, padding, myClass, image}) {
+
+function Header({carousel, subheading, title, padding, myClass, image, imgstyle,imageposition}) {
   const [sliders, setSliders] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -47,12 +41,17 @@ function Header({carousel, subheading, title, padding, myClass, image}) {
           <h1 className="title m-0">{title}</h1>
         </Col>
          <Col sm={24}  md={12} className="gradient-image-banner"> 
-            <img src={image || "https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg"} alt="" width="100%" height="280px"/>
+            <LazyLoadImage src={image || "https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg"} alt="" width="100%" height="280px" 
+            style={imgstyle ? {objectPosition: 'center'} 
+            : imageposition === "candidates_experienced" ? {objectPosition:"20% 42%"}
+            : {}
+          } className={title === 'Our latest news' || title === 'Contact Us' ? 'news' : ''}
+            />
          </Col>
          {/* <Col md={6} sm={12} className="gradient-image" style={{"backgroundImage": "linear-gradient( 60deg, rgba(0, 0, 0, 0.0), rgba(29, 70, 150, 0.6)), url(https://www.connell-consulting.com/wp-content/uploads/2019/11/Team_hi-res_015-980x700.jpg)"}}></Col> */}
       </Row> 
       : 
-        <Mycarousel className='my-carousel'>
+        <Mycarousel className='my-carousel' autoplay>
           {
             sliders.length > 0 ?
               sliders.map((slider,i) => {
@@ -72,12 +71,14 @@ function Header({carousel, subheading, title, padding, myClass, image}) {
                       {slider.data.slider_subheading && (
                         <h6 className="subheading">{slider.data.slider_subheading}</h6>
                       )}
-                      <div className="title text-elipse ms-0" >{slider.data.slider_description && parse(slider.data.slider_description) }</div>
+                      <div className="title  ms-0" >{slider.data.slider_description && parse(slider.data.slider_description) }</div>
 
                       {
                         slider.data.slider_button !== 'Select button' &&
-                        <Link to={slider.data.slider_button === "news" ? "news/all" : slider.data.slider_button}>
-                          <Button type="primary button-outline">
+                        <Link to={slider.data.slider_button === "news" ? "news/all" 
+                        : slider.data.slider_button === "transactions" ? "transactions/all" 
+                        : slider.data.slider_button}>
+                          <Button type="primary button-outline" className='banner-redirect-button'>
                             See more in {slider.data.slider_button.toUpperCase()} <img src={Arrow} width="10" />{" "}
                           </Button>
                         </Link>
